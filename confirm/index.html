@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Confirming your email · DuckSave</title>
+<style>
+  :root {
+    --duck-yellow: #F7C948;
+    --duck-deep: #1C2B3A;
+    --duck-teal: #1D9E75;
+    --duck-cream: #FBF7EE;
+    --duck-pond: #E8F1F0;
+    --text-soft: #5B6B7A;
+    --border: #E2DACB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Noto Sans Thai", sans-serif;
+    background: var(--duck-cream);
+    color: var(--duck-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    line-height: 1.6;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px 32px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(28, 43, 58, 0.06);
+  }
+  .duck {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .duck.loading { animation: bob 1.4s ease-in-out infinite; }
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  p { color: var(--text-soft); font-size: 15px; margin-bottom: 6px; }
+  .sub { font-size: 13px; color: #98A4B0; }
+  .spinner {
+    width: 28px; height: 28px;
+    border: 3px solid var(--duck-pond);
+    border-top-color: var(--duck-teal);
+    border-radius: 50%;
+    margin: 20px auto 4px;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .btn {
+    display: inline-block;
+    background: var(--duck-yellow);
+    color: var(--duck-deep);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(247, 201, 72, 0.4); }
+  .btn:active { transform: translateY(0); }
+  .hidden { display: none; }
+  .divider { height: 1px; background: var(--border); margin: 24px 0; border: 0; }
+  .lang { font-size: 13px; color: #B0A999; margin-top: 20px; }
+  .lang strong { color: var(--text-soft); font-weight: 600; }
+  .err-icon { font-size: 48px; margin-bottom: 8px; }
+  .footer { margin-top: 28px; font-size: 12px; color: #B8C0C8; }
+  .footer a { color: var(--duck-teal); text-decoration: none; }
+</style>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png">
+</head>
+<body>
+  <div class="card">
+    <!-- LOADING STATE -->
+    <div id="state-loading">
+      <span class="duck loading">🦆</span>
+      <h1>Confirming your email…</h1>
+      <p>กำลังยืนยันอีเมลของคุณ…</p>
+      <div class="spinner"></div>
+      <p class="sub">Opening DuckSave · กำลังเปิดแอป</p>
+    </div>
+
+    <!-- SUCCESS / MANUAL OPEN STATE -->
+    <div id="state-success" class="hidden">
+      <span class="duck">🦆</span>
+      <h1>Email confirmed!</h1>
+      <p>ยืนยันอีเมลสำเร็จแล้ว 🎉</p>
+      <hr class="divider">
+      <p>Tap below to open DuckSave and start saving.</p>
+      <p class="sub">แตะปุ่มด้านล่างเพื่อเปิดแอป DuckSave</p>
+      <a id="open-app-btn" class="btn" href="#">Open DuckSave · เปิดแอป</a>
+      <p class="lang" style="margin-top:24px;">
+        <strong>Didn't open?</strong> Make sure DuckSave is installed, then tap again.<br>
+        <strong>เปิดไม่ได้?</strong> ตรวจว่าติดตั้งแอป DuckSave แล้ว จากนั้นแตะอีกครั้ง
+      </p>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div id="state-error" class="hidden">
+      <span class="err-icon">⚠️</span>
+      <h1>Link expired or invalid</h1>
+      <p>ลิงก์หมดอายุหรือไม่ถูกต้อง</p>
+      <hr class="divider">
+      <p>This confirmation link may have already been used or expired.</p>
+      <p class="sub">ลิงก์นี้อาจถูกใช้ไปแล้วหรือหมดอายุ — ลองสมัครใหม่อีกครั้งในแอป</p>
+      <a class="btn" href="#" id="open-app-btn-err">Open DuckSave · เปิดแอป</a>
+    </div>
+
+    <div class="footer">
+      <a href="https://ducksave.com">DuckSave</a> · Personal finance, made friendly
+    </div>
+  </div>
+
+<script>
+(function () {
+  var APP_SCHEME = "com.budgetapp.budget_tracker://login-callback";
+
+  // Collect everything after the domain — Supabase may put params in
+  // the query string (?code=...) OR the hash fragment (#access_token=...).
+  var search = window.location.search || "";
+  var hash = window.location.hash || "";
+
+  // Build the deep link, preserving whichever params Supabase sent.
+  function buildDeepLink() {
+    var extra = "";
+    if (search.length > 1) {
+      extra = search; // includes leading "?"
+    }
+    if (hash.length > 1) {
+      // append hash params; convert leading # so the app can parse them
+      extra += (extra ? "&" : "?") + hash.substring(1);
+    }
+    return APP_SCHEME + extra;
+  }
+
+  var deepLink = buildDeepLink();
+
+  // Detect obvious error states Supabase passes back
+  var combined = (search + hash).toLowerCase();
+  var hasError = combined.indexOf("error") !== -1 ||
+                 combined.indexOf("otp_expired") !== -1 ||
+                 combined.indexOf("access_denied") !== -1;
+
+  function show(id) {
+    ["state-loading", "state-success", "state-error"].forEach(function (s) {
+      document.getElementById(s).classList.add("hidden");
+    });
+    document.getElementById(id).classList.remove("hidden");
+  }
+
+  // Wire up manual buttons
+  var btn = document.getElementById("open-app-btn");
+  var btnErr = document.getElementById("open-app-btn-err");
+  if (btn) btn.setAttribute("href", deepLink);
+  if (btnErr) btnErr.setAttribute("href", deepLink);
+
+  if (hasError) {
+    show("state-error");
+    return;
+  }
+
+  // Try auto-redirect into the app
+  var redirected = false;
+  function tryOpen() {
+    redirected = true;
+    window.location.href = deepLink;
+  }
+
+  // Attempt immediately
+  setTimeout(tryOpen, 400);
+
+  // After a moment, fall back to manual button (in case the app
+  // scheme didn't fire — e.g. desktop browser or blocked in-app browser)
+  setTimeout(function () {
+    show("state-success");
+  }, 1800);
+})();
+</script>
+</body>
+</html>

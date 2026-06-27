@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account · DuckSave</title>
+<meta name="description" content="How to permanently delete your DuckSave account and all your data, from inside the app or by request.">
+<style>
+  :root {
+    --duck-yellow: #F7C948;
+    --duck-deep: #1C2B3A;
+    --duck-teal: #1D9E75;
+    --duck-cream: #FBF7EE;
+    --duck-pond: #E8F1F0;
+    --text-soft: #5B6B7A;
+    --border: #E2DACB;
+    --danger: #C0392B;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Noto Sans Thai", sans-serif;
+    background: var(--duck-cream);
+    color: var(--duck-deep);
+    line-height: 1.7;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+  .top { text-align: center; margin-bottom: 32px; }
+  .duck { font-size: 48px; line-height: 1; display: inline-block; margin-bottom: 8px; }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .meta { font-size: 13px; color: #98A4B0; }
+  .langbar { display: flex; gap: 8px; justify-content: center; margin: 20px 0 32px; }
+  .langbar button {
+    font: inherit; font-size: 14px; cursor: pointer;
+    padding: 7px 18px; border-radius: 20px; border: 1px solid var(--border);
+    background: #fff; color: var(--text-soft); transition: all 0.15s;
+  }
+  .langbar button.active { background: var(--duck-deep); color: #fff; border-color: var(--duck-deep); }
+  .step {
+    background: #fff; border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px 24px; margin-bottom: 16px;
+  }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--duck-yellow); color: var(--duck-deep);
+    font-weight: 700; font-size: 15px; margin-right: 10px;
+  }
+  .step h2 { display: flex; align-items: center; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+  ol { margin: 0 0 0 20px; color: #3A4A5A; }
+  ol li { margin-bottom: 8px; }
+  p { margin-bottom: 12px; color: #3A4A5A; }
+  .hint { background: var(--duck-pond); border-radius: 12px; padding: 14px 16px; font-size: 14px; margin-top: 12px; color: var(--text-soft); }
+  .danger-box { background: #FDEDEC; border: 1px solid #F5C6C0; border-radius: 12px; padding: 16px 18px; margin: 16px 0; }
+  .danger-box strong { color: var(--danger); }
+  strong.cmd { background: var(--duck-deep); color: #fff; padding: 1px 8px; border-radius: 5px; font-size: 14px; }
+  ul { margin: 8px 0 0 20px; color: #3A4A5A; }
+  ul li { margin-bottom: 6px; }
+  a { color: var(--duck-teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .btn-mail {
+    display: inline-block; background: var(--duck-teal); color: #fff;
+    padding: 11px 22px; border-radius: 12px; font-weight: 600; font-size: 15px;
+    margin-top: 8px; text-decoration: none;
+  }
+  .btn-mail:hover { text-decoration: none; opacity: 0.92; }
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: #B0A999; text-align: center; }
+  .lang-content { display: none; }
+  .lang-content.show { display: block; }
+</style>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png">
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <img class="duck" src="/assets/logo-256.png" alt="DuckSave" width="48" height="48" style="display:inline-block;">
+      <h1>Delete your DuckSave account</h1>
+      <p class="meta">You're in control of your data</p>
+    </div>
+
+    <div class="langbar">
+      <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+      <button id="btn-th" onclick="setLang('th')">ไทย</button>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-content show">
+      <p style="text-align:center;margin-bottom:28px;">Here's how to permanently delete your account and everything in it — from inside the app, or by sending us a request.</p>
+
+      <div class="step">
+        <h2><span class="step-num">1</span>Delete it yourself in the app</h2>
+        <p>The fastest way. The app removes your account and all your data right away.</p>
+        <ol>
+          <li>Open DuckSave and sign in</li>
+          <li>Tap the menu (⋮) at the top right, then <strong>Security</strong></li>
+          <li>Scroll to the bottom and tap <strong>Delete account permanently</strong></li>
+          <li>Type <strong class="cmd">DELETE</strong> to confirm</li>
+        </ol>
+        <div class="hint">Using the app without an account? The same option appears as <strong>Delete all data</strong> and clears everything stored on your device.</div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-num">2</span>Or ask us to delete it</h2>
+        <p>If you've already removed the app or can't sign in, email us from the address on your account and we'll delete it for you within 30 days.</p>
+        <a class="btn-mail" href="mailto:xssza44@gmail.com?subject=Delete%20my%20DuckSave%20account">Email us to delete</a>
+      </div>
+
+      <h2 style="font-size:19px;margin:32px 0 12px;">What gets deleted</h2>
+      <p>Everything tied to your account is permanently removed:</p>
+      <ul>
+        <li>Your profile and login (name, email)</li>
+        <li>All transactions, accounts, and categories</li>
+        <li>Budgets, savings goals, and net worth records</li>
+        <li>Loans, installments, memos, and tags</li>
+      </ul>
+      <div class="danger-box"><strong>Deletion is permanent and can't be undone.</strong> Image attachments stored only on your device are removed when you uninstall the app.</div>
+    </div>
+
+    <!-- THAI -->
+    <div id="lang-th" class="lang-content">
+      <p style="text-align:center;margin-bottom:28px;">วิธีลบบัญชีและข้อมูลทั้งหมดอย่างถาวร — ทำได้เองในแอป หรือส่งคำขอมาให้เรา</p>
+
+      <div class="step">
+        <h2><span class="step-num">1</span>ลบเองในแอป</h2>
+        <p>วิธีที่เร็วที่สุด แอปจะลบบัญชีและข้อมูลทั้งหมดของคุณทันที</p>
+        <ol>
+          <li>เปิดแอป DuckSave และเข้าสู่ระบบ</li>
+          <li>แตะเมนู (⋮) มุมขวาบน แล้วเลือก <strong>Security</strong> (ความปลอดภัย)</li>
+          <li>เลื่อนลงล่างสุด แตะ <strong>Delete account permanently</strong> (ลบบัญชีถาวร)</li>
+          <li>พิมพ์ <strong class="cmd">DELETE</strong> เพื่อยืนยัน</li>
+        </ol>
+        <div class="hint">ใช้แอปแบบไม่มีบัญชี? ตัวเลือกเดียวกันจะแสดงเป็น <strong>Delete all data</strong> (ลบข้อมูลทั้งหมด) ซึ่งจะล้างทุกอย่างที่เก็บในเครื่อง</div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-num">2</span>หรือส่งคำขอมาให้เราลบ</h2>
+        <p>หากคุณถอนการติดตั้งแอปไปแล้ว หรือเข้าสู่ระบบไม่ได้ ส่งอีเมลจากที่อยู่อีเมลที่ผูกกับบัญชีของคุณ แล้วเราจะลบให้ภายใน 30 วัน</p>
+        <a class="btn-mail" href="mailto:xssza44@gmail.com?subject=Delete%20my%20DuckSave%20account">ส่งอีเมลเพื่อลบบัญชี</a>
+      </div>
+
+      <h2 style="font-size:19px;margin:32px 0 12px;">สิ่งที่จะถูกลบ</h2>
+      <p>ทุกอย่างที่ผูกกับบัญชีของคุณจะถูกลบอย่างถาวร:</p>
+      <ul>
+        <li>โปรไฟล์และข้อมูลเข้าสู่ระบบ (ชื่อ อีเมล)</li>
+        <li>รายการธุรกรรม บัญชี และหมวดหมู่ทั้งหมด</li>
+        <li>งบประมาณ เป้าหมายการออม และบันทึกความมั่งคั่งสุทธิ</li>
+        <li>เงินกู้ ผ่อนชำระ บันทึกช่วยจำ และแท็ก</li>
+      </ul>
+      <div class="danger-box"><strong>การลบเป็นการถาวรและไม่สามารถกู้คืนได้</strong> รูปภาพที่แนบซึ่งเก็บไว้ในเครื่องเท่านั้นจะถูกลบเมื่อคุณถอนการติดตั้งแอป</div>
+    </div>
+
+    <div class="footer">DuckSave · <a href="/privacy/">Privacy Policy</a> · Last updated: June 2026</div>
+  </div>
+
+<script>
+function setLang(lang) {
+  document.getElementById('lang-th').classList.toggle('show', lang === 'th');
+  document.getElementById('lang-en').classList.toggle('show', lang === 'en');
+  document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>
