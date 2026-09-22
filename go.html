@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DuckSave — ยืนยันสำเร็จ</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -45,7 +48,10 @@
       font-size: 14px;
       color: #8A6D00;
     }
-  </style>
+    /* 🇹🇭 กันคำทับศัพท์ไม่ให้ถูกตัดกลางคำ — ภาษาไทยไม่มีช่องว่างระหว่างคำ
+     เบราว์เซอร์จึงเดาจุดตัดเอง และตัด "คลาวด์" ออกจากคำหน้ามันได้ */
+  .nb { white-space: nowrap; }
+</style>
 </head>
 <body>
   <div class="card">

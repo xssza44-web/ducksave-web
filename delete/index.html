@@ -66,6 +66,9 @@
   .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: #B0A999; text-align: center; }
   .lang-content { display: none; }
   .lang-content.show { display: block; }
+  /* 🇹🇭 กันคำทับศัพท์ไม่ให้ถูกตัดกลางคำ — ภาษาไทยไม่มีช่องว่างระหว่างคำ
+     เบราว์เซอร์จึงเดาจุดตัดเอง และตัด "คลาวด์" ออกจากคำหน้ามันได้ */
+  .nb { white-space: nowrap; }
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
@@ -85,7 +88,7 @@
     </div>
 
     <!-- ENGLISH -->
-    <div id="lang-en" class="lang-content show">
+    <div id="lang-en" class="lang-content show" lang="en">
       <p style="text-align:center;margin-bottom:28px;">Here's how to permanently delete your account and everything in it — from inside the app, or by sending us a request.</p>
 
       <div class="step">
@@ -93,11 +96,12 @@
         <p>The fastest way. The app removes your account and all your data right away.</p>
         <ol>
           <li>Open DuckSave and sign in</li>
-          <li>Tap the menu (⋮) at the top right, then <strong>Security</strong></li>
+          <li>Tap the gear (⚙) at the top right to open <strong>Settings</strong>, then tap <strong>Security</strong></li>
           <li>Scroll to the bottom and tap <strong>Delete account permanently</strong></li>
           <li>Type <strong class="cmd">DELETE</strong> to confirm</li>
         </ol>
         <div class="hint">Using the app without an account? The same option appears as <strong>Delete all data</strong> and clears everything stored on your device.</div>
+        <div class="hint"><strong>Have DuckSave Pro?</strong> Deleting your account doesn't cancel your subscription. <a href="https://play.google.com/store/account/subscriptions">Cancel it first in Google Play.</a></div>
       </div>
 
       <div class="step">
@@ -114,14 +118,14 @@
         <li>Budgets, savings goals, and net worth records</li>
         <li>Loans, installments, memos, and tags</li>
       </ul>
-      <div class="danger-box"><strong>Deletion is permanent and can't be undone.</strong> Image attachments stored only on your device are removed when you uninstall the app.</div>
+      <div class="danger-box"><strong>Deletion is permanent and can't be undone.</strong> Receipt photos, your sign-in and the app's settings on this device are deleted right away — only your theme and language are kept.</div>
 
       <h2 style="font-size:19px;margin:32px 0 12px;">Data retention</h2>
-      <p>After your account is deleted, all personal data is permanently removed from our servers. Email-requested deletions are completed within 30 days. We do not retain your personal data afterward, except where required by law.</p>
+      <p>After your account is deleted, all personal data is permanently removed from our servers. Email-requested deletions are completed within 30 days. We do not retain your personal data afterward, except where required by law. If you bought DuckSave Pro, your purchase record stays with Google Play and RevenueCat.</p>
     </div>
 
     <!-- THAI -->
-    <div id="lang-th" class="lang-content">
+    <div id="lang-th" class="lang-content" lang="th">
       <p style="text-align:center;margin-bottom:28px;">วิธีลบบัญชีและข้อมูลทั้งหมดอย่างถาวร — ทำได้เองในแอป หรือส่งคำขอมาให้เรา</p>
 
       <div class="step">
@@ -129,11 +133,12 @@
         <p>วิธีที่เร็วที่สุด แอปจะลบบัญชีและข้อมูลทั้งหมดของคุณทันที</p>
         <ol>
           <li>เปิดแอป DuckSave และเข้าสู่ระบบ</li>
-          <li>แตะเมนู (⋮) มุมขวาบน แล้วเลือก <strong>Security</strong> (ความปลอดภัย)</li>
+          <li>แตะไอคอนเฟือง (⚙) มุมขวาบนเพื่อเปิด <strong>Settings</strong> (ตั้งค่า) แล้วแตะ <strong>Security</strong> (ความปลอดภัย)</li>
           <li>เลื่อนลงล่างสุด แตะ <strong>Delete account permanently</strong> (ลบบัญชีถาวร)</li>
           <li>พิมพ์ <strong class="cmd">DELETE</strong> เพื่อยืนยัน</li>
         </ol>
         <div class="hint">ใช้แอปแบบไม่มีบัญชี? ตัวเลือกเดียวกันจะแสดงเป็น <strong>Delete all data</strong> (ลบข้อมูลทั้งหมด) ซึ่งจะล้างทุกอย่างที่เก็บในเครื่อง</div>
+        <div class="hint"><strong>ใช้ DuckSave Pro อยู่?</strong> การลบบัญชีไม่ได้ยกเลิกการสมัครสมาชิกให้ <a href="https://play.google.com/store/account/subscriptions">ยกเลิกใน Google Play ก่อน</a></div>
       </div>
 
       <div class="step">
@@ -150,13 +155,13 @@
         <li>งบประมาณ เป้าหมายการออม และบันทึกความมั่งคั่งสุทธิ</li>
         <li>เงินกู้ ผ่อนชำระ บันทึกช่วยจำ และแท็ก</li>
       </ul>
-      <div class="danger-box"><strong>การลบเป็นการถาวรและไม่สามารถกู้คืนได้</strong> รูปภาพที่แนบซึ่งเก็บไว้ในเครื่องเท่านั้นจะถูกลบเมื่อคุณถอนการติดตั้งแอป</div>
+      <div class="danger-box"><strong>การลบเป็นการถาวรและไม่สามารถกู้คืนได้</strong> รูปใบเสร็จ การเข้าสู่ระบบ และค่าที่ตั้งไว้ในเครื่องนี้จะถูกลบทันที — เก็บไว้เฉพาะธีมกับภาษา</div>
 
       <h2 style="font-size:19px;margin:32px 0 12px;">การเก็บรักษาข้อมูล</h2>
-      <p>หลังจากลบบัญชีแล้ว ข้อมูลส่วนบุคคลทั้งหมดจะถูกลบออกจากเซิร์ฟเวอร์ของเราอย่างถาวร คำขอลบผ่านอีเมลจะดำเนินการเสร็จภายใน 30 วัน เราจะไม่เก็บรักษาข้อมูลส่วนบุคคลของคุณไว้หลังจากนั้น ยกเว้นในกรณีที่กฎหมายกำหนด</p>
+      <p>หลังจากลบบัญชีแล้ว ข้อมูลส่วนบุคคลทั้งหมดจะถูกลบออกจากเซิร์ฟเวอร์ของเราอย่างถาวร คำขอลบผ่านอีเมลจะดำเนินการเสร็จภายใน 30 วัน เราจะไม่เก็บรักษาข้อมูลส่วนบุคคลของคุณไว้หลังจากนั้น ยกเว้นในกรณีที่กฎหมายกำหนด หากคุณซื้อ DuckSave Pro ประวัติการซื้อจะยังอยู่กับ Google Play และ RevenueCat</p>
     </div>
 
-    <div class="footer">DuckSave by HUMBURRER · <a href="../privacy/">Privacy Policy</a> · Last updated: July 2026</div>
+    <div class="footer">DuckSave by HUMBURRER · <a href="../privacy/">Privacy Policy</a> · Last updated: September 2026</div>
   </div>
 
 <script>

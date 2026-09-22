@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy · DuckSave</title>
-<meta name="description" content="DuckSave privacy policy — your financial data stays on your device first, synced only when you sign in. We never sell your data.">
+<meta name="description" content="DuckSave privacy policy — your financial data stays on your device first, backed up only when you choose.">
 <style>
   :root {
     --duck-yellow: #F7C948;
@@ -50,6 +50,9 @@
   .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: #B0A999; text-align: center; }
   .lang-content { display: none; }
   .lang-content.show { display: block; }
+  /* 🇹🇭 กันคำทับศัพท์ไม่ให้ถูกตัดกลางคำ — ภาษาไทยไม่มีช่องว่างระหว่างคำ
+     เบราว์เซอร์จึงเดาจุดตัดเอง และตัด "คลาวด์" ออกจากคำหน้ามันได้ */
+  .nb { white-space: nowrap; }
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
@@ -69,23 +72,23 @@
     </div>
 
     <!-- THAI -->
-    <div id="lang-th" class="lang-content show">
-      <p class="meta" style="text-align:center;margin-bottom:24px;">มีผลบังคับใช้: 27 มิถุนายน 2569 · อัปเดตล่าสุด: 27 มิถุนายน 2569</p>
+    <div id="lang-th" class="lang-content show" lang="th">
+      <p class="meta" style="text-align:center;margin-bottom:24px;">มีผลบังคับใช้: 27 มิถุนายน 2569 · อัปเดตล่าสุด: 22 กันยายน 2569</p>
 
       <div class="summary">
-        <strong>สรุปสั้น ๆ:</strong> DuckSave เก็บข้อมูลการเงินของคุณไว้ในเครื่องเป็นหลัก (offline-first) และซิงก์ขึ้นคลาวด์เฉพาะเมื่อคุณเข้าสู่ระบบและเปิดใช้งานเท่านั้น เราไม่เคยขายข้อมูลของคุณ และไม่แชร์ข้อมูลการเงินของคุณกับบุคคลที่สามเพื่อการโฆษณา
+        <strong>สรุปสั้น ๆ:</strong> DuckSave เก็บข้อมูลการเงินของคุณไว้ในเครื่องเป็นหลัก (offline-first) และสำรอง<span class="nb">ขึ้นคลาวด์</span>เฉพาะเมื่อคุณเข้าสู่ระบบและเลือกสำรองข้อมูลเท่านั้น เราไม่แชร์ข้อมูลการเงินของคุณกับบุคคลที่สามเพื่อการโฆษณา
       </div>
 
       <h2>1. ข้อมูลที่เราเก็บ</h2>
       <h3>ข้อมูลที่คุณสร้างขึ้นเอง</h3>
       <ul>
         <li>รายการรายรับ-รายจ่าย จำนวนเงิน หมวดหมู่ บันทึกช่วยจำ และวันที่</li>
-        <li>ข้อมูลบัญชี งบประมาณ เป้าหมายการออม และข้อมูลภาษี</li>
-        <li>รูปภาพสลิป/ใบเสร็จที่คุณแนบ (เก็บไว้ในเครื่องเท่านั้น ไม่ซิงก์ขึ้นคลาวด์)</li>
+        <li>ข้อมูลบัญชี งบประมาณ และเป้าหมายการออม</li>
+        <li>รูปภาพสลิป/ใบเสร็จที่คุณแนบ (เก็บไว้ในเครื่องเท่านั้น ไม่สำรอง<span class="nb">ขึ้นคลาวด์</span>)</li>
       </ul>
       <h3>ข้อมูลบัญชี (เมื่อคุณเลือกเข้าสู่ระบบ)</h3>
       <ul>
-        <li>อีเมล สำหรับการเข้าสู่ระบบและการซิงก์ข้อมูล</li>
+        <li>อีเมล สำหรับการเข้าสู่ระบบและการสำรองข้อมูล<span class="nb">ขึ้นคลาวด์</span></li>
         <li>ข้อมูลจาก Google Sign-In (ชื่อ อีเมล) หากคุณเลือกใช้</li>
       </ul>
       <h3>ข้อมูลทางเทคนิค</h3>
@@ -96,33 +99,36 @@
       <h2>2. เราใช้ข้อมูลอย่างไร</h2>
       <ul>
         <li>เพื่อให้บริการฟังก์ชันหลักของแอป (บันทึกและแสดงผลการเงินของคุณ)</li>
-        <li>เพื่อซิงก์ข้อมูลระหว่างอุปกรณ์ของคุณ (เมื่อเปิดใช้งาน)</li>
+        <li>เพื่อสำรองข้อมูลของคุณ<span class="nb">ขึ้นคลาวด์</span> ซึ่งเป็นฟีเจอร์ของ DuckSave Pro (เมื่อเปิดใช้งาน)</li>
         <li>เพื่อส่งการแจ้งเตือนเตือนความจำ (เมื่อคุณอนุญาต)</li>
         <li>เพื่อปรับปรุงและแก้ไขข้อบกพร่องของแอป</li>
       </ul>
 
-      <h2>3. การเก็บและการซิงก์ข้อมูล</h2>
-      <p>ข้อมูลของคุณถูกเก็บในเครื่องของคุณก่อนเป็นหลัก (ฐานข้อมูล SQLite) เมื่อคุณเข้าสู่ระบบและเปิดใช้การซิงก์ ข้อมูล (ยกเว้นรูปภาพ) จะถูกซิงก์ไปยังเซิร์ฟเวอร์คลาวด์ที่ปลอดภัย (Supabase) ข้อมูลของคุณถูกป้องกันด้วยระบบความปลอดภัยระดับแถว (Row Level Security) ซึ่งทำให้มีเพียงคุณเท่านั้นที่เข้าถึงข้อมูลของตนเองได้</p>
+      <h2>3. การเก็บและการสำรองข้อมูล</h2>
+      <p>ข้อมูลของคุณถูกเก็บในเครื่องของคุณก่อนเป็นหลัก (ฐานข้อมูล SQLite) เมื่อคุณเข้าสู่ระบบและสำรองข้อมูล (ซึ่งเป็นฟีเจอร์ของ DuckSave Pro) ข้อมูล (ยกเว้นรูปภาพ) จะถูกเก็บไว้บน<span class="nb">เซิร์ฟเวอร์คลาวด์</span>ที่ปลอดภัย (Supabase) ข้อมูลของคุณถูกป้องกันด้วยระบบความปลอดภัยระดับแถว (Row Level Security) ซึ่งทำให้มีเพียงคุณเท่านั้นที่เข้าถึงข้อมูลของตนเองได้</p>
 
       <h2>4. การแชร์ข้อมูล</h2>
-      <p>เราไม่ขายข้อมูลของคุณ เราใช้ผู้ให้บริการบุคคลที่สามเท่าที่จำเป็นต่อการทำงานของแอปเท่านั้น:</p>
+      <p>เราใช้ผู้ให้บริการบุคคลที่สามเท่าที่จำเป็นต่อการทำงานของแอปเท่านั้น:</p>
       <ul>
-        <li><strong>Supabase</strong> — สำหรับจัดเก็บและซิงก์ข้อมูลบนคลาวด์</li>
+        <li><strong>Supabase</strong> — สำหรับจัดเก็บและสำรองข้อมูล<span class="nb">บนคลาวด์</span></li>
         <li><strong>Resend</strong> — สำหรับส่งอีเมลยืนยันบัญชี</li>
         <li><strong>Google</strong> — สำหรับบริการเข้าสู่ระบบ (Google Sign-In) หากคุณเลือกใช้</li>
+        <li><strong>Google Gemini</strong> — สำหรับข้อมูลเชิงลึกจาก AI เฉพาะเมื่อคุณอนุญาตเท่านั้น เราส่งเพียงสรุปยอดรวมรายเดือนและชื่อหมวดหมู่ · เราไม่เคยส่งรายการธุรกรรมรายตัว ชื่อ หรืออีเมลของคุณ และ Google ไม่ได้นำไปใช้ฝึกโมเดลของตน</li>
+        <li><strong>RevenueCat</strong> — สำหรับดำเนินการสมัครสมาชิก DuckSave Pro โดยได้รับประวัติการซื้อและรหัสผู้ใช้ของแอป</li>
+        <li><strong>Firebase Crashlytics</strong> — สำหรับรายงานข้อขัดข้องและข้อมูลอุปกรณ์ เฉพาะเมื่อคุณอนุญาตให้ส่งรายงานข้อขัดข้องเท่านั้น</li>
       </ul>
 
       <h2>5. ความปลอดภัยของข้อมูล</h2>
       <ul>
         <li>ข้อมูลถูกเข้ารหัสระหว่างการรับส่ง (encrypted in transit)</li>
         <li>คุณสามารถล็อกแอปด้วย PIN หรือไบโอเมตริก (ลายนิ้วมือ/ใบหน้า)</li>
-        <li>ข้อมูลคลาวด์ของคุณถูกแยกและล็อกด้วย Row Level Security</li>
+        <li><span class="nb">ข้อมูลคลาวด์</span>ของคุณถูกแยกและล็อกด้วย Row Level Security</li>
       </ul>
 
       <h2>6. สิทธิ์ของคุณ</h2>
       <p>คุณมีสิทธิ์ในการเข้าถึง แก้ไข และลบข้อมูลของคุณ ตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล (เช่น GDPR ของยุโรป, PDPA ของไทย, CCPA ของแคลิฟอร์เนีย)</p>
       <h3>การลบบัญชีและข้อมูล</h3>
-      <p>คุณสามารถลบรายการแต่ละรายการได้ในแอป และสามารถลบบัญชีพร้อมข้อมูลทั้งหมดบนคลาวด์ได้ด้วยตัวเองในแอป หรือดูวิธีที่ <a href="../delete/">หน้าการลบบัญชี</a></p>
+      <p>คุณสามารถลบรายการแต่ละรายการได้ในแอป และสามารถลบบัญชีพร้อมข้อมูลทั้งหมด<span class="nb">บนคลาวด์</span>ได้ด้วยตัวเองในแอป หรือดูวิธีที่ <a href="../delete/">หน้าการลบบัญชี</a></p>
 
       <h2>7. ข้อมูลของเด็ก</h2>
       <p>แอปนี้ไม่ได้มุ่งเป้าไปที่เด็กอายุต่ำกว่า 13 ปี และเราไม่เก็บข้อมูลจากเด็กโดยเจตนา</p>
@@ -135,23 +141,23 @@
     </div>
 
     <!-- ENGLISH -->
-    <div id="lang-en" class="lang-content">
-      <p class="meta" style="text-align:center;margin-bottom:24px;">Effective: June 27, 2026 · Last updated: June 27, 2026</p>
+    <div id="lang-en" class="lang-content" lang="en">
+      <p class="meta" style="text-align:center;margin-bottom:24px;">Effective: June 27, 2026 · Last updated: September 22, 2026</p>
 
       <div class="summary">
-        <strong>In short:</strong> DuckSave keeps your financial data on your device first (offline-first) and syncs to the cloud only when you sign in and turn it on. We never sell your data, and we don't share your financial information with third parties for advertising.
+        <strong>In short:</strong> DuckSave keeps your financial data on your device first (offline-first) and is backed up to the cloud only when you sign in and choose to back up. We don't share your financial information with third parties for advertising.
       </div>
 
       <h2>1. What we collect</h2>
       <h3>Data you create</h3>
       <ul>
         <li>Income and expense entries, amounts, categories, notes, and dates</li>
-        <li>Account, budget, savings goal, and tax information</li>
-        <li>Receipt/slip images you attach (stored on your device only, never synced)</li>
+        <li>Account, budget, and savings goal information</li>
+        <li>Receipt/slip images you attach (stored on your device only, never backed up)</li>
       </ul>
       <h3>Account data (when you choose to sign in)</h3>
       <ul>
-        <li>Email, for sign-in and data sync</li>
+        <li>Email, for sign-in and cloud backup</li>
         <li>Google Sign-In details (name, email) if you choose to use it</li>
       </ul>
       <h3>Technical data</h3>
@@ -162,20 +168,23 @@
       <h2>2. How we use it</h2>
       <ul>
         <li>To provide the app's core functions (recording and showing your finances)</li>
-        <li>To sync your data across your devices (when enabled)</li>
+        <li>To back up your data to the cloud, a DuckSave Pro feature (when enabled)</li>
         <li>To send reminder notifications (when you allow them)</li>
         <li>To improve and fix bugs in the app</li>
       </ul>
 
-      <h2>3. Storage and sync</h2>
-      <p>Your data is stored on your device first (SQLite database). When you sign in and enable sync, your data (except images) is synced to a secure cloud server (Supabase). Your data is protected by Row Level Security, so only you can access your own data.</p>
+      <h2>3. Storage and backup</h2>
+      <p>Your data is stored on your device first (SQLite database). When you sign in and back up (a DuckSave Pro feature), your data (except images) is stored on a secure cloud server (Supabase). Your data is protected by Row Level Security, so only you can access your own data.</p>
 
       <h2>4. Data sharing</h2>
-      <p>We do not sell your data. We use third-party providers only as needed for the app to work:</p>
+      <p>We use third-party providers only as needed for the app to work:</p>
       <ul>
-        <li><strong>Supabase</strong> — for cloud storage and sync</li>
+        <li><strong>Supabase</strong> — for cloud storage and backup</li>
         <li><strong>Resend</strong> — for sending account confirmation emails</li>
         <li><strong>Google</strong> — for sign-in (Google Sign-In) if you choose to use it</li>
+        <li><strong>Google Gemini</strong> — for AI insights, only when you allow it. We send a monthly summary of your totals and category names. We never send individual transactions, your name, or your email, and Google does not use it to train its models.</li>
+        <li><strong>RevenueCat</strong> — to process DuckSave Pro subscriptions. It receives your purchase history and an app user ID.</li>
+        <li><strong>Firebase Crashlytics</strong> — for crash reports and device information, only if you allow crash reporting.</li>
       </ul>
 
       <h2>5. Data security</h2>

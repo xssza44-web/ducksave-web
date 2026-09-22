@@ -90,6 +90,9 @@
   .err-icon { font-size: 48px; margin-bottom: 8px; }
   .footer { margin-top: 28px; font-size: 12px; color: #B8C0C8; }
   .footer a { color: var(--duck-teal); text-decoration: none; }
+  /* 🇹🇭 กันคำทับศัพท์ไม่ให้ถูกตัดกลางคำ — ภาษาไทยไม่มีช่องว่างระหว่างคำ
+     เบราว์เซอร์จึงเดาจุดตัดเอง และตัด "คลาวด์" ออกจากคำหน้ามันได้ */
+  .nb { white-space: nowrap; }
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
