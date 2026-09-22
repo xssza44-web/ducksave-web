@@ -172,6 +172,19 @@ function setLang(lang) {
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.documentElement.lang = lang;
 }
+
+/* 🌐 เลือกภาษาให้ผู้เข้าชมตอนโหลด — อังกฤษคือค่าตั้งต้นใน HTML เอง
+   ① ?lang=th / ?lang=en ชนะเสมอ (แชร์ลิงก์เจาะจงภาษาได้)
+   ② ไม่มีพารามิเตอร์ → ดูภาษาแรกของเบราว์เซอร์ ขึ้นต้นด้วย "th" = ไทย
+   ③ นอกนั้นไม่ทำอะไร — หน้าเสิร์ฟอังกฤษมาแล้วตั้งแต่ต้น
+   🔑 คนที่ไม่มี JavaScript (และตัวเก็บข้อมูลของ Play/เครื่องมือค้นหา) ได้อังกฤษเสมอ */
+(function () {
+  var q = null;
+  try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  if (q === 'th' || q === 'en') { setLang(q); return; }
+  var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+  if (String(first).toLowerCase().indexOf('th') === 0) setLang('th');
+})();
 </script>
 </body>
 </html>

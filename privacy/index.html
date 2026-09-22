@@ -1,6 +1,6 @@
 <!-- redeploy -->
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,12 +67,12 @@
     </div>
 
     <div class="langbar">
-      <button id="btn-th" class="active" onclick="setLang('th')">ไทย</button>
-      <button id="btn-en" onclick="setLang('en')">English</button>
+      <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+      <button id="btn-th" onclick="setLang('th')">ไทย</button>
     </div>
 
     <!-- THAI -->
-    <div id="lang-th" class="lang-content show" lang="th">
+    <div id="lang-th" class="lang-content" lang="th">
       <p class="meta" style="text-align:center;margin-bottom:24px;">มีผลบังคับใช้: 27 มิถุนายน 2569 · อัปเดตล่าสุด: 22 กันยายน 2569</p>
 
       <div class="summary">
@@ -141,7 +141,7 @@
     </div>
 
     <!-- ENGLISH -->
-    <div id="lang-en" class="lang-content" lang="en">
+    <div id="lang-en" class="lang-content show" lang="en">
       <p class="meta" style="text-align:center;margin-bottom:24px;">Effective: June 27, 2026 · Last updated: September 22, 2026</p>
 
       <div class="summary">
@@ -220,6 +220,19 @@ function setLang(lang) {
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.documentElement.lang = lang;
 }
+
+/* 🌐 เลือกภาษาให้ผู้เข้าชมตอนโหลด — อังกฤษคือค่าตั้งต้นใน HTML เอง
+   ① ?lang=th / ?lang=en ชนะเสมอ (แชร์ลิงก์เจาะจงภาษาได้)
+   ② ไม่มีพารามิเตอร์ → ดูภาษาแรกของเบราว์เซอร์ ขึ้นต้นด้วย "th" = ไทย
+   ③ นอกนั้นไม่ทำอะไร — หน้าเสิร์ฟอังกฤษมาแล้วตั้งแต่ต้น
+   🔑 คนที่ไม่มี JavaScript (และตัวเก็บข้อมูลของ Play/เครื่องมือค้นหา) ได้อังกฤษเสมอ */
+(function () {
+  var q = null;
+  try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  if (q === 'th' || q === 'en') { setLang(q); return; }
+  var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+  if (String(first).toLowerCase().indexOf('th') === 0) setLang('th');
+})();
 </script>
 </body>
 </html>
