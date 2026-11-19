@@ -17,35 +17,45 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-.hero{padding-top:30px}
-.hero h1{font-size:52px}
-.heroin{display:grid;grid-template-columns:1fr 250px;gap:44px;align-items:center}
-.heroin > img{width:100%;border-radius:22px;border:7px solid #fff;
-              box-shadow:0 18px 44px rgba(28,43,58,.15)}
-.feats{margin-top:46px;background:var(--pond);border-radius:22px;padding:30px 34px}
-.feats h2{font-size:21px;font-weight:700;margin-bottom:17px}
-.feats div{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px;font-size:16.5px;color:#41525F}
-.feats div:last-child{margin-bottom:0}
-.feats .dot{color:var(--teal);font-weight:700;flex:none}
-.gsec{margin-top:58px}
-.gsec .lbl{font-size:13px;letter-spacing:.14em;color:var(--purple);font-weight:600}
-.gsec h2{margin-top:11px;font-size:30px;font-weight:700;letter-spacing:-.6px;line-height:1.32}
-.gsec > p{margin-top:12px;font-size:17.5px;line-height:1.74;color:var(--muted);max-width:38em}
-.g4{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.g4 a{display:flex;flex-direction:column;text-decoration:none;background:#fff;
-      border:1px solid var(--line);border-radius:18px;padding:23px 25px;
-      transition:box-shadow .15s,transform .15s}
-.g4 a:hover{box-shadow:0 14px 32px rgba(28,43,58,.11);transform:translateY(-2px)}
-.g4 .n{align-self:flex-start;display:inline-grid;place-items:center;width:26px;height:26px;
-       border-radius:9px;background:#F1ECFB;color:var(--purple);font-weight:700;font-size:14px}
-.g4 h3{margin-top:13px;font-size:21px;font-weight:700;letter-spacing:-.2px;line-height:1.34}
-.g4 .sum{margin-top:7px;font-size:16px;color:var(--muted);line-height:1.6}
-.g4 .go{margin-top:auto;padding-top:15px;font-size:15.5px;font-weight:600;color:var(--purple)}
+.hero h1{font-size:50px;margin-top:0}
+.heroin{display:grid;grid-template-columns:1fr 258px;gap:46px;align-items:center}
+
+.feats h2{font-size:22px;font-weight:700;margin-bottom:19px}
+.feats .r{display:flex;gap:14px;align-items:flex-start;font-size:17px;color:#3C4A58;
+          line-height:34px;min-height:34px}
+.feats .dot{width:25px;height:25px;border:2.2px solid var(--ink);border-radius:50%;flex:none;
+            display:grid;place-items:center;font-size:0;margin-top:5px}
+.feats .dot::before{content:"";width:6px;height:11px;border:2.2px solid var(--ink);
+            border-top:0;border-left:0;transform:rotate(42deg);margin-top:-3px}
+
+.gsec{margin-top:40px;position:relative}
+.gsec .lbl{font-size:13px;letter-spacing:.14em;color:#6B6453;font-weight:600}
+.gsec h2{margin-top:11px;font-size:31px;font-weight:700;letter-spacing:-.6px;line-height:1.38}
+.gsec > p{margin-top:13px;font-size:17.5px;line-height:1.78;color:#4A4536;max-width:36em}
+.gsec .pen{right:6px;top:-6px}
+
+.g4{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.g4 a{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);
+      padding:26px 28px;box-shadow:0 1px 0 #D6CCB4,0 12px 22px rgba(74,62,36,.18);
+      transition:transform .14s,box-shadow .14s}
+.g4 a:nth-child(1){transform:rotate(-.45deg)}
+.g4 a:nth-child(2){transform:rotate(.3deg)}
+.g4 a:nth-child(3){transform:rotate(.4deg)}
+.g4 a:nth-child(4){transform:rotate(-.35deg)}
+.g4 a:hover{transform:translateY(-3px) rotate(0deg);
+            box-shadow:0 1px 0 #D6CCB4,0 20px 32px rgba(74,62,36,.25)}
+.g4 h3{font-size:22px;font-weight:700;letter-spacing:-.2px;line-height:1.4}
+.g4 .sum{margin-top:9px;font-size:16px;color:var(--muted);line-height:1.68}
+.g4 .sum{margin-bottom:20px}
+.g4 .go{margin-top:auto;align-self:flex-start;font-size:15.5px;font-weight:700;color:var(--ink);
+        border-bottom:2.5px solid var(--yellow);padding-bottom:1px}
+
 @media (max-width:860px){
-  .hero h1{font-size:32px}
-  .heroin{grid-template-columns:1fr;gap:26px}
-  .heroin > img{max-width:220px;margin:0 auto;display:block;order:-1}
-  .g4{grid-template-columns:1fr}
+  .hero h1{font-size:31px}
+  .heroin{grid-template-columns:1fr;gap:34px}
+  .heroin .taped{max-width:220px;margin:0 auto;order:-1}
+  .g4{grid-template-columns:1fr;gap:16px}
+  .g4 a:nth-child(n){transform:none}
   .gsec h2{font-size:24px}
 }
 </style>
@@ -70,31 +80,36 @@
     </nav>
   </header>
 
-  <div class="col hero">
-    <div class="heroin">
-      <div>
-        <h1>ดูว่า<em>เงินไปไหนหมด</em></h1>
-        <p class="lede">บันทึกรายรับรายจ่ายได้ในไม่กี่วินาที ดูเงินทุกบัญชีในที่เดียว ใช้ออฟไลน์ได้
-          <b>ฟรี — ไม่ต้องสมัครก็ใช้ได้</b></p>
-        <div class="cta">
-          <a class="btn p" href="/download/">โหลดแอป</a>
-          <a class="btn s" href="/guides/">ดูคู่มือการเงิน</a>
-          <span class="note">มีบน Google Play แล้ว · iOS เร็ว ๆ นี้</span>
+  <div class="col">
+
+    <div class="sheet stack hero">
+      <div class="heroin">
+        <div>
+          <h1>ดูว่า<em>เงินไปไหนหมด</em></h1>
+          <p class="lede">บันทึกรายรับรายจ่ายได้ในไม่กี่วินาที ดูเงินทุกบัญชีในที่เดียว ใช้ออฟไลน์ได้
+            <b>ฟรี — ไม่ต้องสมัครก็ใช้ได้</b></p>
+          <div class="cta">
+            <a class="btn p" href="/download/">โหลดแอป</a>
+            <a class="btn s" href="/guides/">ดูคู่มือการเงิน</a>
+            <span class="note">มีบน Google Play แล้ว · iOS เร็ว ๆ นี้</span>
+          </div>
         </div>
+        <div class="taped"><img src="/assets/screen-goal.png" alt="หน้าจอเป้าหมายการออมใน DuckSave"></div>
       </div>
-      <img src="/assets/logo-512.png" alt="DuckSave">
     </div>
 
-    <div class="feats">
+    <div class="sheet a feats ruled">
       <h2>เรื่องเงิน ที่เป็นมิตร</h2>
-      <div><span class="dot">✓</span><span>บันทึกรายรับรายจ่ายได้ในไม่กี่วินาที</span></div>
-      <div><span class="dot">✓</span><span>ดูเงินทุกบัญชีในที่เดียว</span></div>
-      <div><span class="dot">✓</span><span>ตั้งงบที่ใช้ได้จริงกับวิธีใช้เงินของคุณ</span></div>
-      <div><span class="dot">✓</span><span>ตั้งเป้าออมเงินแล้วให้แอปนับให้</span></div>
-      <div><span class="dot">✓</span><span>ใช้ออฟไลน์ได้ ข้อมูลอยู่ในเครื่องคุณ</span></div>
+      <div class="r"><span class="dot">✓</span><span>บันทึกรายรับรายจ่ายได้ในไม่กี่วินาที</span></div>
+      <div class="r"><span class="dot">✓</span><span>ดูเงินทุกบัญชีในที่เดียว</span></div>
+      <div class="r"><span class="dot">✓</span><span>ตั้งงบที่ใช้ได้จริงกับวิธีใช้เงินของคุณ</span></div>
+      <div class="r"><span class="dot">✓</span><span>ตั้งเป้าออมเงินแล้วให้แอปนับให้</span></div>
+      <div class="r"><span class="dot">✓</span><span>ใช้ออฟไลน์ได้ ข้อมูลอยู่ในเครื่องคุณ</span></div>
     </div>
 
     <section class="gsec">
+      <div class="pen"><b>พิมพ์ได้</b>ไม่ต้องสมัคร
+        <svg viewBox="0 0 60 26" fill="none"><path d="M4 4 C18 1 40 6 54 16" stroke="#BF4F30" stroke-width="2" stroke-linecap="round"/><path d="M44 17 L55 18 L52 7" stroke="#BF4F30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="lbl">คู่มือการเงิน</div>
       <h2>4 วิธีออมเงิน<br>เลือกแบบที่เข้ากับจังหวะเงินของคุณ</h2>
       <p>ทุกคู่มือมีตารางครบ คิดเลขให้แล้ว บอกข้อดีข้อเสียตรง ๆ และมีไฟล์พิมพ์ได้แจกฟรี

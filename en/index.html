@@ -17,25 +17,22 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-.hero{padding-top:30px}
-.hero h1{font-size:52px}
-.heroin{display:grid;grid-template-columns:1fr 250px;gap:44px;align-items:center}
-.heroin > img{width:100%;border-radius:22px;border:7px solid #fff;
-              box-shadow:0 18px 44px rgba(28,43,58,.15)}
-.feats{margin-top:46px;background:var(--pond);border-radius:22px;padding:30px 34px}
-.feats h2{font-size:21px;font-weight:700;margin-bottom:17px}
-.feats div{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px;font-size:16.5px;color:#41525F}
-.feats div:last-child{margin-bottom:0}
-.feats .dot{color:var(--teal);font-weight:700;flex:none}
-.note2{margin-top:44px;background:#fff;border:1px solid var(--line);border-radius:18px;
-       padding:24px 28px}
-.note2 h2{font-size:20px;font-weight:700}
-.note2 p{margin-top:9px;font-size:16.5px;line-height:1.72;color:var(--muted)}
-.note2 a{font-weight:600;color:var(--purple)}
+.hero h1{font-size:50px;margin-top:0}
+.heroin{display:grid;grid-template-columns:1fr 258px;gap:46px;align-items:center}
+.feats h2{font-size:22px;font-weight:700;margin-bottom:19px}
+.feats .r{display:flex;gap:14px;align-items:flex-start;font-size:17px;color:#3C4A58;
+          line-height:34px;min-height:34px}
+.feats .dot{width:25px;height:25px;border:2.2px solid var(--ink);border-radius:50%;flex:none;
+            display:grid;place-items:center;font-size:0;margin-top:5px}
+.feats .dot::before{content:"";width:6px;height:11px;border:2.2px solid var(--ink);
+            border-top:0;border-left:0;transform:rotate(42deg);margin-top:-3px}
+.note2 h2{font-size:21px;font-weight:700}
+.note2 p{margin-top:10px;font-size:16.5px;line-height:1.78;color:var(--muted)}
+.note2 a{font-weight:600;color:var(--ink);border-bottom:2.5px solid var(--yellow)}
 @media (max-width:860px){
-  .hero h1{font-size:32px}
-  .heroin{grid-template-columns:1fr;gap:26px}
-  .heroin > img{max-width:220px;margin:0 auto;display:block;order:-1}
+  .hero h1{font-size:31px}
+  .heroin{grid-template-columns:1fr;gap:34px}
+  .heroin .taped{max-width:220px;margin:0 auto;order:-1}
 }
 </style>
 </head>
@@ -47,30 +44,33 @@
     <nav><a class="lang" href="/">ไทย</a></nav>
   </header>
 
-  <div class="col hero">
-    <div class="heroin">
-      <div>
-        <h1>See where<br><em>your money went</em></h1>
-        <p class="lede">Log income and expenses in seconds. Every account in one place.
-          Works offline. <b>Free — no sign-up needed.</b></p>
-        <div class="cta">
-          <a class="btn p" href="/download/">Get the app</a>
-          <span class="note">On Google Play now · iOS coming soon</span>
+  <div class="col">
+
+    <div class="sheet stack hero">
+      <div class="heroin">
+        <div>
+          <h1>See where<br><em>your money went</em></h1>
+          <p class="lede">Log income and expenses in seconds. Every account in one place.
+            Works offline. <b>Free — no sign-up needed.</b></p>
+          <div class="cta">
+            <a class="btn p" href="/download/">Get the app</a>
+            <span class="note">On Google Play now · iOS coming soon</span>
+          </div>
         </div>
+        <div class="taped"><img src="/assets/screen-goal-en.png" alt="A savings goal in DuckSave"></div>
       </div>
-      <img src="/assets/logo-512.png" alt="DuckSave">
     </div>
 
-    <div class="feats">
+    <div class="sheet a feats ruled">
       <h2>Built for people who already track their money</h2>
-      <div><span class="dot">✓</span><span>Log income and expenses in seconds — offline and private</span></div>
-      <div><span class="dot">✓</span><span>Every account in one place</span></div>
-      <div><span class="dot">✓</span><span>Simple budgets that fit how you actually spend</span></div>
-      <div><span class="dot">✓</span><span>Savings goals the app counts for you</span></div>
-      <div><span class="dot">✓</span><span>Your data stays on your device</span></div>
+      <div class="r"><span class="dot">✓</span><span>Log income and expenses in seconds — offline and private</span></div>
+      <div class="r"><span class="dot">✓</span><span>Every account in one place</span></div>
+      <div class="r"><span class="dot">✓</span><span>Simple budgets that fit how you actually spend</span></div>
+      <div class="r"><span class="dot">✓</span><span>Savings goals the app counts for you</span></div>
+      <div class="r"><span class="dot">✓</span><span>Your data stays on your device</span></div>
     </div>
 
-    <div class="note2">
+    <div class="note2 sheet">
       <h2>Saving guides</h2>
       <p>Free printable savings tables and plain-spoken guides to four ways of saving —
         with the numbers worked out, the downsides stated, and nothing to sign up for.

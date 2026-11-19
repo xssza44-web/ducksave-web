@@ -16,28 +16,34 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-.g4{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.g4 a{display:flex;flex-direction:column;text-decoration:none;background:#fff;
-      border:1px solid var(--line);border-radius:18px;padding:25px 27px;
-      transition:box-shadow .15s,transform .15s}
-.g4 a:hover{box-shadow:0 14px 32px rgba(28,43,58,.11);transform:translateY(-2px)}
-.g4 .n{align-self:flex-start;display:inline-grid;place-items:center;width:27px;height:27px;
-       border-radius:9px;background:#F1ECFB;color:var(--purple);font-weight:700;font-size:14.5px}
-.g4 h3{margin-top:14px;font-size:22px;font-weight:700;letter-spacing:-.2px;line-height:1.34}
-.g4 .sum{margin-top:7px;font-size:16.5px;color:var(--muted);line-height:1.65}
-.g4 .who{margin-top:14px;padding-top:13px;border-top:1px solid #F2EBDC;
-         font-size:15.5px;line-height:1.6;color:#3C4A58}
-.g4 .go{margin-top:auto;padding-top:15px;font-size:15.5px;font-weight:600;color:var(--purple)}
-.dl{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px 28px}
-.dl h2{font-size:20px;font-weight:700}
-.dl p{margin-top:9px;font-size:16.5px;line-height:1.72;color:var(--muted)}
-.dl .row{margin-top:17px;display:flex;gap:11px;flex-wrap:wrap}
-.dl .row a{font-size:15.5px;padding:11px 19px}
-.why{margin-top:44px;padding-top:28px;border-top:2px solid var(--ink)}
-.why h2{font-size:22px;font-weight:700;margin-bottom:10px}
-.why p{font-size:17px;line-height:1.78;color:var(--muted)}
+.g4{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.g4 a{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);
+      padding:26px 28px;box-shadow:0 1px 0 #D6CCB4,0 12px 22px rgba(74,62,36,.18);
+      transition:transform .14s,box-shadow .14s}
+.g4 a:nth-child(1){transform:rotate(-.45deg)}
+.g4 a:nth-child(2){transform:rotate(.3deg)}
+.g4 a:nth-child(3){transform:rotate(.4deg)}
+.g4 a:nth-child(4){transform:rotate(-.35deg)}
+.g4 a:hover{transform:translateY(-3px) rotate(0deg);
+            box-shadow:0 1px 0 #D6CCB4,0 20px 32px rgba(74,62,36,.25)}
+.g4 h3{font-size:22px;font-weight:700;letter-spacing:-.2px;line-height:1.4}
+.g4 .sum{margin-top:9px;font-size:16.5px;color:var(--muted);line-height:1.7}
+.g4 .who{margin-top:16px;padding-top:14px;border-top:1px solid var(--hair);
+         font-size:15.5px;line-height:1.6;color:#3C4A58;margin-bottom:18px}
+.g4 .go{margin-top:auto;align-self:flex-start;font-size:15.5px;font-weight:700;color:var(--ink);
+        border-bottom:2.5px solid var(--yellow);padding-bottom:1px}
+.dl{margin-top:30px}
+.dl h2{font-size:21px;font-weight:700}
+.dl p{margin-top:10px;font-size:16.5px;line-height:1.76;color:var(--muted)}
+.dl .row{margin-top:19px;display:flex;gap:16px;flex-wrap:wrap}
+.dl .row a{font-size:15.5px;padding:12px 21px}
+.why h2{font-size:22px;font-weight:700;margin-bottom:11px}
+.why p{font-size:17px;line-height:1.82;color:var(--muted)}
 .why b{color:var(--ink)}
-@media (max-width:860px){ .g4{grid-template-columns:1fr} }
+@media (max-width:860px){
+  .g4{grid-template-columns:1fr;gap:16px}
+  .g4 a:nth-child(n){transform:none}
+}
 </style>
 </head>
 <body>
@@ -62,10 +68,12 @@
 
   <div class="col">
     <div class="crumb"><a href="/">หน้าแรก</a> › คู่มือการเงิน</div>
-    <h1>คู่มือการเงิน</h1>
-    <p class="lede">4 วิธีออมเงินที่แอปเรามีจริง ทุกคู่มือคิดเลขให้แล้วทุกช่อง
-      บอกข้อดีข้อเสียตรง ๆ และบอกด้วยว่าวิธีไหนไม่เหมาะกับใคร
-      <b>มีไฟล์พิมพ์ได้แจกฟรี ไม่ต้องสมัคร ไม่ต้องกรอกอีเมล</b></p>
+    <div class="sheet stack">
+      <h1>คู่มือการเงิน</h1>
+      <p class="lede">4 วิธีออมเงินที่แอปเรามีจริง ทุกคู่มือคิดเลขให้แล้วทุกช่อง
+        บอกข้อดีข้อเสียตรง ๆ และบอกด้วยว่าวิธีไหนไม่เหมาะกับใคร
+        <b>มีไฟล์พิมพ์ได้แจกฟรี ไม่ต้องสมัคร ไม่ต้องกรอกอีเมล</b></p>
+    </div>
 
     <div class="g4">
       <a href="/guides/fixed/"><h3>เท่ากันทุกครั้ง</h3>
@@ -93,7 +101,7 @@
         <div class="go">อ่านคู่มือ →</div></a>
     </div>
 
-    <div class="dl">
+    <div class="dl sheet b">
       <h2>ไฟล์ที่แจกฟรี</h2>
       <p>พิมพ์ซ้ำได้ไม่จำกัด ไม่ต้องสมัคร ไม่ต้องกรอกอีเมล</p>
       <div class="row">
@@ -102,7 +110,7 @@
       </div>
     </div>
 
-    <section class="why">
+    <section class="why sheet">
       <h2>ทำไมถึงมี 4 วิธี ไม่ใช่วิธีเดียวที่ดีที่สุด</h2>
       <p>เพราะจังหวะเงินของแต่ละคนไม่เหมือนกัน คนมีเงินเดือนประจำกับคนค้าขาย
         ใช้ตารางเดียวกันไม่ได้ <b>วิธีที่ดีที่สุดคือวิธีที่คุณทำได้ติดต่อกันหลายเดือน</b>

@@ -39,6 +39,7 @@
   <div class="col">
     <div class="crumb"><a href="/">หน้าแรก</a> › <a href="/guides/">คู่มือการเงิน</a> › เท่ากันทุกครั้ง</div>
 
+    <div class="sheet stack">
     <h1>ตารางออมเงิน<br><em>แบบเท่ากันทุกครั้ง</em></h1>
 
     <p class="lede">ยอดเท่ากันทุกงวด ไม่เพิ่ม ไม่ลด จึงรู้ล่วงหน้าเสมอว่าต้องเตรียมเท่าไร
@@ -56,7 +57,9 @@
       <span class="note">พิมพ์ได้ ไม่ต้องสมัคร ไม่ต้องกรอกอีเมล</span>
     </div>
 
-    <nav class="toc">
+    </div>
+
+    <nav class="a toc sheet">
       <h2>ในหน้านี้</h2>
       <ol>
         <li><a href="#what">ตารางออมเงินแบบเท่ากันทุกครั้ง คืออะไร</a></li>
@@ -72,7 +75,7 @@
       </ol>
     </nav>
 
-    <section id="what">
+    <section class="sheet" id="what">
       <h2 class="s">ตารางออมเงินแบบเท่ากันทุกครั้ง คืออะไร</h2>
       <p>เก็บยอดเดิมทุกงวด วันละ 20 บาทก็ 20 บาททุกวัน สัปดาห์ละ 500 ก็ 500 ทุกสัปดาห์
         ไม่มีงวดไหนหนักกว่างวดอื่น <b>ต่างจากตาราง 52 สัปดาห์ที่ยอดขยับขึ้นหรือลงทุกสัปดาห์</b></p>
@@ -81,32 +84,32 @@
         และเพราะมันคาดเดาได้ มันจึงเป็นแบบที่ตั้งโอนอัตโนมัติได้ง่ายที่สุด</p>
     </section>
 
-    <section id="daily">
+    <section class="b sheet" id="daily">
       <h2 class="s">ออมเงินวันละ 20 50 100 บาท ได้เท่าไร</h2>
       <p>ตารางนี้คือยอดรวมเมื่อเก็บครบ คิดจากยอดต่อวันคูณจำนวนวัน ไม่รวมดอกเบี้ย</p>
-      <table>
+      <div class="tscroll"><table>
         <tr><th>เก็บวันละ</th><th>ครบ 30 วัน</th><th>ครบ 100 วัน</th><th>ครบ 1 ปี</th></tr>
         <tr><td class='lbl'>วันละ 5 บาท</td><td class='v'>150</td><td class='v'>500</td><td class='v'>1,825</td></tr><tr><td class='lbl'>วันละ 10 บาท</td><td class='v'>300</td><td class='v'>1,000</td><td class='v'>3,650</td></tr><tr><td class='lbl'>วันละ 20 บาท</td><td class='v'>600</td><td class='v'>2,000</td><td class='v'>7,300</td></tr><tr><td class='lbl'>วันละ 50 บาท</td><td class='v'>1,500</td><td class='v'>5,000</td><td class='v'>18,250</td></tr><tr><td class='lbl'>วันละ 100 บาท</td><td class='v'>3,000</td><td class='v'>10,000</td><td class='v'>36,500</td></tr>
-      </table>
+      </table></div>
       <p class="cap">ยอดทั้งหมดเป็นบาท · 1 ปีคิดที่ 365 วัน</p>
       <p>ยอดที่คนเริ่มกันมากที่สุดคือ <b>วันละ 20 บาท</b> เพราะเป็นเงินที่หายไปโดยไม่รู้สึก
         แต่ครบปีแล้วได้ 7,300 บาท ส่วน <b>วันละ 100 บาท</b> ครบ 100 วันได้ 10,000 บาทพอดี
         ซึ่งเป็นยอดที่คนตั้งเป้ากันบ่อย</p>
     </section>
 
-    <section id="target">
+    <section class="sheet" id="target">
       <h2 class="s">อยากได้ 10,000 บาท ต้องเก็บวันละเท่าไร</h2>
       <p>คิดกลับง่ายมาก — <b>เอาเป้าหารด้วยจำนวนงวด แล้วปัดขึ้นเป็นเลขกลม</b>
         ยอดรวมจะเกินเป้านิดหน่อย ซึ่งดีกว่าขาดไปตอนท้าย ตารางนี้คิดไว้ให้แล้ว</p>
-      <table>
+      <div class="tscroll"><table>
         <tr><th>อยากได้</th><th>วันละ (100 วัน)</th><th>วันละ (1 ปี)</th>
             <th>สัปดาห์ละ (52)</th><th>เดือนละ (12)</th><th>ครบปีจริงได้</th></tr>
         <tr><td class='lbl'>10,000 บาท</td><td class='v'>100</td><td class='v'>28</td><td class='v'>193</td><td class='v'>834</td><td class='dim'>10,220</td></tr><tr><td class='lbl'>20,000 บาท</td><td class='v'>200</td><td class='v'>55</td><td class='v'>385</td><td class='v'>1,667</td><td class='dim'>20,075</td></tr><tr><td class='lbl'>50,000 บาท</td><td class='v'>500</td><td class='v'>137</td><td class='v'>962</td><td class='v'>4,167</td><td class='dim'>50,005</td></tr><tr><td class='lbl'>100,000 บาท</td><td class='v'>1,000</td><td class='v'>274</td><td class='v'>1,924</td><td class='v'>8,334</td><td class='dim'>100,010</td></tr>
-      </table>
+      </table></div>
       <p class="cap">ช่องขวาสุดคือยอดจริงเมื่อเก็บวันละเท่าที่ปัดขึ้นแล้ว ครบ 365 วัน</p>
     </section>
 
-    <section id="big">
+    <section class="a sheet" id="big">
       <h2 class="s">ตารางออมเงิน 50,000 และ 100,000 บาท</h2>
       <p>เป้าหลักหมื่นปลาย ๆ ถึงหลักแสน ใช้หลักเดียวกันทุกอย่าง
         ต่างกันแค่ยอดต่อวันที่สูงขึ้นจนต้องวางแผนจริงจัง
@@ -116,18 +119,18 @@
         <b>และถ้ายังรู้สึกว่าหนักอยู่ นั่นแปลว่าควรยืดเวลา ไม่ใช่ฝืนยอด</b></p>
     </section>
 
-    <section id="cadence">
+    <section class="sheet" id="cadence">
       <h2 class="s">ออมรายสัปดาห์ กับ รายเดือน</h2>
       <h3 class="t">ตารางรายสัปดาห์</h3>
-      <table>
+      <div class="tscroll"><table>
         <tr><th>เก็บสัปดาห์ละ</th><th>ครบ 12 สัปดาห์</th><th>ครบ 26 สัปดาห์</th><th>ครบ 52 สัปดาห์</th></tr>
         <tr><td class='lbl'>สัปดาห์ละ 50 บาท</td><td class='v'>600</td><td class='v'>1,300</td><td class='v'>2,600</td></tr><tr><td class='lbl'>สัปดาห์ละ 100 บาท</td><td class='v'>1,200</td><td class='v'>2,600</td><td class='v'>5,200</td></tr><tr><td class='lbl'>สัปดาห์ละ 200 บาท</td><td class='v'>2,400</td><td class='v'>5,200</td><td class='v'>10,400</td></tr><tr><td class='lbl'>สัปดาห์ละ 500 บาท</td><td class='v'>6,000</td><td class='v'>13,000</td><td class='v'>26,000</td></tr>
-      </table>
+      </table></div>
       <h3 class="t">ตารางรายเดือน</h3>
-      <table>
+      <div class="tscroll"><table>
         <tr><th>เก็บเดือนละ</th><th>ครบ 6 เดือน</th><th>ครบ 1 ปี</th><th>ครบ 2 ปี</th></tr>
         <tr><td class='lbl'>เดือนละ 500 บาท</td><td class='v'>3,000</td><td class='v'>6,000</td><td class='v'>12,000</td></tr><tr><td class='lbl'>เดือนละ 1,000 บาท</td><td class='v'>6,000</td><td class='v'>12,000</td><td class='v'>24,000</td></tr><tr><td class='lbl'>เดือนละ 2,000 บาท</td><td class='v'>12,000</td><td class='v'>24,000</td><td class='v'>48,000</td></tr><tr><td class='lbl'>เดือนละ 5,000 บาท</td><td class='v'>30,000</td><td class='v'>60,000</td><td class='v'>120,000</td></tr>
-      </table>
+      </table></div>
       <div class="rows">
         <div><b>เลือกรายวัน ถ้า…</b><span>เงินเข้าทุกวันหรือเกือบทุกวัน เช่น ค้าขาย รับจ้างรายวัน
           ขับรถส่งของ — ยอดเล็กทำให้ไม่รู้สึก และได้ทำทุกวันจนเป็นนิสัย</span></div>
@@ -138,7 +141,7 @@
       </div>
     </section>
 
-    <section id="fit">
+    <section class="b sheet" id="fit">
       <h2 class="s">ข้อดี ข้อเสีย เหมาะกับใคร</h2>
       <p>ทุกวิธีมีราคาที่ต้องจ่าย วิธีนี้ก็เหมือนกัน
         ผมเขียนไว้ครบทั้ง 2 ด้านเพื่อให้เลือกได้ก่อนเริ่ม ไม่ใช่รู้ตอนเดือนที่ 3 แล้วเลิก</p>
@@ -187,7 +190,7 @@
         ส่วนคนที่กลัวเลิกกลางทางให้ใช้ <b>ลดลงทีละนิด</b> ลิงก์อยู่ท้ายหน้า</p>
     </section>
 
-    <section id="research">
+    <section class="sheet" id="research">
       <h2 class="s">งานวิจัย: ทำไมวิธีนี้ถึงกลัวช่องว่างที่สุด</h2>
       <p>วิธีนี้ทำเป็นตารางติดผนังได้สวยที่สุด เพราะทุกช่องเท่ากัน
         แต่นั่นแปลว่า<b>ช่องที่ยังไม่ได้กาก็เด่นที่สุดเหมือนกัน</b> และมีงานวิจัยเรื่องนี้อยู่</p>
@@ -216,7 +219,7 @@
         ผมจึงเขียนว่างานวิจัยเรื่องเป้าหมาย ไม่ได้เขียนว่างานวิจัยเรื่องการออมเงิน</p>
     </section>
 
-    <section id="miss">
+    <section class="a sheet" id="miss">
       <h2 class="s">ทำไม่ทันบางงวด ทำยังไง</h2>
       <div class="rows">
         <div><b>ลืมไป 1–2 งวด</b><span>ไม่ต้องเริ่มใหม่ ยอดรวมสำคัญกว่าลำดับ
@@ -230,7 +233,7 @@
       </div>
     </section>
 
-    <section id="preset">
+    <section class="sheet" id="preset">
       <h2 class="s">ยอดแรกที่ผมแนะนำ — 1,000 บาทใน 100 วัน</h2>
       <p>ถ้ายังไม่รู้จะเริ่มที่ยอดไหน ผมแนะนำ <b>วันละ 10 บาท 100 วัน ได้ 1,000 บาท</b>
         เล็กพอที่จะเริ่มวันนี้โดยไม่ต้องคิด
@@ -239,7 +242,7 @@
         ว่าคุณทำได้ แล้วค่อยขยับเป็นวันละ 20 หรือ 50 บาทในรอบถัดไป</p>
     </section>
 
-    <section id="app">
+    <section class="b sheet" id="app">
       <h2 class="s">ของที่ผมทำไว้ให้</h2>
       <div class="give">
         <div>
@@ -265,7 +268,7 @@
       </div>
     </section>
 
-    <section class="next">
+    <section class="next sheet">
       <div class="lbl">อ่านต่อ</div>
       <h2>ถ้าวิธีนี้ไม่เข้ากับคุณ<br>อีก 3 วิธีอาจใช่</h2>
       <p>ทั้ง 4 วิธีอยู่ในแอปเดียวกัน เปลี่ยนได้ตลอด ไม่ต้องเริ่มเป้าใหม่</p>
@@ -282,7 +285,7 @@
       </div>
     </section>
 
-    <div class="refs">
+    <div class="a sheet"><div class="refs">
       <h3>งานวิจัยที่อ้างถึงในหน้านี้</h3>
       <ol>
         <li>Silverman, J., &amp; Barasch, A. (2023). On or Off Track: How (Broken) Streaks Affect
@@ -293,7 +296,7 @@
     </div>
 
     <p class="dis">หน้านี้เป็นเครื่องมือช่วยสร้างนิสัยการออม ไม่ใช่คำแนะนำการลงทุน
-      ยอดทุกช่องคิดจากสูตรด้วยโปรแกรมและตรวจแล้ว ไม่รวมดอกเบี้ย ถ้าเจอที่ผิด บอกผมได้เลย</p>
+      ยอดทุกช่องคิดจากสูตรด้วยโปรแกรมและตรวจแล้ว ไม่รวมดอกเบี้ย ถ้าเจอที่ผิด บอกผมได้เลย</p></div>
   </div>
 
   <footer>
