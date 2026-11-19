@@ -1,0 +1,197 @@
+/* DuckSave — ชุดหน้าตาที่ทุกหน้าใช้ร่วมกัน */
+:root{ --cream:#FBF7EE; --ink:#1C2B3A; --yellow:#F7C948; --teal:#1D9E75;
+       --purple:#7657CB; --muted:#5B6B7A; --line:#E2DACB; --pond:#E8F1F0; --red:#C2593D; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"IBM Plex Sans Thai Looped",-apple-system,BlinkMacSystemFont,"Noto Sans Thai",sans-serif;
+     background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.col{max-width:760px}
+
+/* แถบบน + ลิ้นชัก */
+.top{position:relative;display:flex;align-items:center;gap:13px;padding:21px 0}
+.top>a.home{display:flex;align-items:center;gap:11px;text-decoration:none}
+.top img{width:32px;height:32px}
+.top .nm{font-weight:700;font-size:19px}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:22px;font-size:16px;color:var(--muted)}
+.top nav a{text-decoration:none}
+.dd{position:relative}
+.dd summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+            color:var(--ink);font-weight:600}
+.dd summary::-webkit-details-marker{display:none}
+.dd summary::after{content:"";width:0;height:0;border-left:4.5px solid transparent;
+  border-right:4.5px solid transparent;border-top:5.5px solid var(--ink);transition:transform .15s}
+.dd[open] summary::after{transform:rotate(180deg)}
+.panel{position:absolute;top:calc(100% + 15px);right:-22px;left:auto;width:430px;z-index:30;
+  background:#FFFDF8;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 44px rgba(28,43,58,.15);overflow:hidden}
+.panel .hd{font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--purple);padding:16px 21px 11px}
+.panel a{display:flex;align-items:baseline;gap:13px;text-decoration:none;
+  padding:13px 21px;border-top:1px solid #F2EBDC;color:var(--ink)}
+.panel a.on{background:#FFF8E6}
+.panel .n{color:var(--purple);font-weight:700;font-size:14.5px;min-width:1.1em}
+.panel .t{font-weight:600;font-size:17.5px}
+.panel .m{margin-left:auto;font-size:14.5px;color:var(--muted);white-space:nowrap}
+.lang{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:14px}
+
+/* ปุ่ม */
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;border-radius:999px;
+     padding:13px 23px;font-size:16.5px;font-weight:600}
+.btn.p{background:var(--ink);color:#fff}
+.btn.s{background:transparent;color:var(--ink);border:1.5px solid #D9CFBA}
+
+/* หัวเรื่อง */
+.crumb{padding-top:34px;font-size:14.5px;color:var(--muted)}
+.crumb a{text-decoration:none}
+h1{margin-top:13px;font-size:45px;line-height:1.25;font-weight:700;letter-spacing:-1.1px}
+h1 em{font-style:normal;background:linear-gradient(transparent 8%, rgba(247,201,72,.85) 8%,
+      rgba(247,201,72,.85) 94%, transparent 94%)}
+.lede{margin-top:19px;font-size:19.5px;line-height:1.78;color:var(--muted)}
+.by{margin-top:26px;display:flex;align-items:center;gap:13px;font-size:15px;color:var(--muted)}
+.by .ph{width:44px;height:44px;border-radius:50%;border:1.5px dashed #CFC3AC;flex:none;
+        display:grid;place-items:center;font-size:10.5px;color:#B3A88F;text-align:center;line-height:1.25}
+.by b{color:var(--ink);font-weight:600}
+.cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cta .note{width:100%;font-size:14.5px;color:var(--muted);margin-top:3px}
+
+/* สารบัญ */
+.toc{margin-top:40px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:22px 26px}
+.toc h2{font-size:13px;letter-spacing:.14em;color:var(--purple);font-weight:600;margin-bottom:13px}
+.toc ol{list-style:none;counter-reset:t;columns:2;column-gap:34px}
+.toc li{counter-increment:t;margin-bottom:9px;break-inside:avoid}
+.toc a{text-decoration:none;font-size:16.5px;line-height:1.5;display:flex;gap:10px}
+.toc a::before{content:counter(t);color:var(--purple);font-weight:600;font-size:14px;min-width:1.2em}
+.toc a:hover{text-decoration:underline}
+
+/* เนื้อหา */
+section{margin-top:52px;scroll-margin-top:20px}
+h2.s{font-size:30px;font-weight:700;letter-spacing:-.6px;line-height:1.32}
+h3.t{margin-top:30px;font-size:21px;font-weight:700;letter-spacing:-.2px}
+section p{margin-top:14px;font-size:18px;line-height:1.82;color:#3C4A58}
+section p b{color:var(--ink)}
+.pull{margin-top:26px;border-left:4px solid var(--yellow);padding:4px 0 4px 22px;
+      font-size:21px;line-height:1.66;font-weight:600}
+table{margin-top:20px;width:100%;border-collapse:collapse;font-size:16px;
+      background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th{background:#F6F0E2;font-weight:600;font-size:14.5px;color:var(--muted);text-align:left;padding:12px 14px}
+td{padding:11px 14px;border-top:1px solid #F2EBDC}
+td.lbl{font-weight:600}
+td.v{color:var(--teal);font-weight:600}
+td.dim{color:#A59884;font-size:14.5px}
+td.w{color:var(--muted);font-size:14.5px}
+td.a{font-weight:600}
+td.c{color:var(--teal);font-weight:600}
+.cap{margin-top:10px;font-size:14.5px;color:var(--muted)}
+.t52 th:nth-child(4),.t52 td:nth-child(4){border-left:1px solid var(--line)}
+.bars{margin-top:26px;display:flex;align-items:flex-end;gap:2px;height:118px;
+      padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.bars i{flex:1;background:linear-gradient(180deg,var(--purple),#A48BE0);border-radius:2px 2px 0 0}
+
+/* อ้างอิงงานวิจัย */
+.cite{margin-top:22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--purple);
+      border-radius:0 14px 14px 0;padding:18px 22px}
+.cite .who{font-size:15px;font-weight:600;color:var(--purple)}
+.cite .what{margin-top:6px;font-size:16px;line-height:1.7;color:var(--muted)}
+
+/* ตัวเลขใหญ่ */
+.big{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.big > div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 26px}
+.big .k{font-size:44px;font-weight:700;letter-spacing:-1.5px;line-height:1}
+.big .k.good{color:var(--teal)} .big .k.bad{color:var(--red)}
+.big .l{margin-top:10px;font-size:16.5px;line-height:1.62;color:#3C4A58}
+.big .s{margin-top:9px;font-size:14.5px;color:var(--muted)}
+
+/* ข้อดี ข้อเสีย เหมาะกับใคร */
+.fit{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fit > div{border-radius:18px;padding:23px 25px;border:1px solid}
+.fit .lbl{font-size:12.5px;letter-spacing:.12em;font-weight:700;margin-bottom:13px}
+.fit ul{list-style:none}
+.fit li{font-size:16.5px;line-height:1.72;padding-left:21px;position:relative;margin-bottom:10px}
+.fit li:last-child{margin-bottom:0}
+.fit li::before{position:absolute;left:0;font-weight:700}
+.pro{background:#F2FAF6;border-color:#C9E6DA}
+.pro .lbl{color:#157A5A} .pro li{color:#2F5B4B} .pro li::before{content:"+";color:#3FA886}
+.con{background:#FFF6F2;border-color:#EBD3C8}
+.con .lbl{color:var(--red)} .con li{color:#6B4A3E} .con li::before{content:"\2013";color:#C9A392}
+.yes{background:#F6F2FF;border-color:#DCCFF5}
+.yes .lbl{color:var(--purple)} .yes li{color:#4B3F6B} .yes li::before{content:"\2713";color:#9479D8;font-size:14px}
+.nofit{background:#F6F4EF;border-color:#DED5C2}
+.nofit .lbl{color:#8C8171} .nofit li{color:#5B5447} .nofit li::before{content:"\2715";color:#B3A88F;font-size:13px}
+
+/* แถวคำอธิบาย */
+.rows{margin-top:24px;display:grid;gap:2px}
+.rows > div{background:#fff;border:1px solid var(--line);padding:17px 21px}
+.rows > div:first-child{border-radius:16px 16px 0 0}
+.rows > div:last-child{border-radius:0 0 16px 16px}
+.rows b{display:block;font-size:17.5px;margin-bottom:5px}
+.rows span{font-size:16.5px;color:var(--muted);line-height:1.7}
+
+/* ข้อจำกัด */
+.limits{margin-top:28px;background:#FFF6F2;border:1px solid #EBD3C8;border-radius:18px;padding:26px 28px}
+.limits .lbl{font-size:12.5px;letter-spacing:.13em;font-weight:700;color:var(--red)}
+.limits h3{margin-top:12px;font-size:22px;font-weight:700;line-height:1.4}
+.limits ul{margin-top:14px;list-style:none}
+.limits li{font-size:16.5px;line-height:1.75;color:#6B4A3E;padding-left:20px;position:relative;margin-bottom:9px}
+.limits li::before{content:"\2013";position:absolute;left:0;color:#C9A392}
+
+/* กล่องของแจก + แอป */
+.give{margin-top:30px;display:grid;grid-template-columns:1fr 212px;gap:32px;align-items:center;
+     background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 32px}
+.give h3{font-size:25px;font-weight:700;letter-spacing:-.4px;line-height:1.35}
+.give p{margin-top:11px;font-size:17px;line-height:1.72;color:var(--muted)}
+.give .row{margin-top:19px;display:flex;gap:10px;flex-wrap:wrap}
+.give img{width:100%;border-radius:14px;border:6px solid #fff;box-shadow:0 12px 30px rgba(28,43,58,.14)}
+.appbox{margin-top:22px;display:grid;grid-template-columns:1fr 200px;gap:30px;align-items:center;
+     background:#F3EEFF;border:1px solid #DCCFF5;border-radius:20px;padding:28px 30px}
+.appbox h3{font-size:23px;font-weight:700;letter-spacing:-.3px;line-height:1.35}
+.appbox p{margin-top:10px;font-size:16.5px;line-height:1.7;color:#5B4D75}
+.appbox img{width:100%;border-radius:13px;border:5px solid #fff;box-shadow:0 10px 26px rgba(28,43,58,.13)}
+.appbox .row{margin-top:17px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* อ่านต่อ */
+.next{margin-top:58px;padding-top:34px;border-top:2px solid var(--ink)}
+.next>.lbl{font-size:13px;letter-spacing:.14em;color:var(--purple);font-weight:600}
+.next h2{margin-top:11px;font-size:28px;font-weight:700;letter-spacing:-.5px;line-height:1.34}
+.next>p{margin-top:12px;font-size:17.5px;line-height:1.72;color:var(--muted);max-width:36em}
+.cards{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cards a{display:flex;flex-direction:column;text-decoration:none;background:#fff;
+   border:1px solid var(--line);border-radius:18px;padding:22px;transition:box-shadow .15s,transform .15s}
+.cards a:hover{box-shadow:0 14px 32px rgba(28,43,58,.11);transform:translateY(-2px)}
+.cards .n{align-self:flex-start;display:inline-grid;place-items:center;width:26px;height:26px;
+   border-radius:9px;background:#F1ECFB;color:var(--purple);font-weight:700;font-size:14px}
+.cards h3{margin-top:13px;font-size:20.5px;font-weight:700;letter-spacing:-.2px;line-height:1.34}
+.cards .sum{margin-top:6px;font-size:15.5px;color:var(--muted)}
+.cards .go{margin-top:auto;padding-top:16px;font-size:15.5px;font-weight:600;color:var(--purple)}
+
+.refs{margin-top:46px;padding-top:24px;border-top:1px solid var(--line)}
+.refs h3{font-size:13px;letter-spacing:.13em;color:var(--muted);font-weight:600;margin-bottom:13px}
+.refs ol{padding-left:20px}
+.refs li{font-size:15px;line-height:1.75;color:var(--muted);margin-bottom:9px}
+.dis{margin-top:26px;font-size:15px;color:var(--muted);line-height:1.7}
+footer{margin-top:56px;border-top:1px solid var(--line);padding:28px 0 56px;
+       display:flex;align-items:center;gap:22px;font-size:15px;color:var(--muted);flex-wrap:wrap}
+footer img{width:40px;height:40px;opacity:.9}
+footer a{text-decoration:none}
+footer .right{margin-left:auto}
+
+@media (max-width:860px){
+  .wrap{padding:0 20px}
+  .top nav>a:not(.lang){display:none}
+  .top{position:relative}
+  .dd{position:static}
+  .panel{left:0;right:0;width:auto;top:calc(100% + 6px)}
+  h1{font-size:30px;letter-spacing:-.4px}
+  .lede{font-size:17.5px}
+  h2.s{font-size:23px}
+  section p{font-size:17px}
+  .toc ol{columns:1}
+  .big,.fit{grid-template-columns:1fr}
+  .big .k{font-size:38px}
+  .cards{grid-template-columns:1fr}
+  .give,.appbox{grid-template-columns:1fr;gap:20px;padding:24px 20px}
+  .give img,.appbox img{max-width:205px;margin:0 auto;display:block}
+  table{font-size:14.5px}
+  td,th{padding:9px 9px}
+}

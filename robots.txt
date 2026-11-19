@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# หน้าที่เปิดจากอีเมลเท่านั้น ไม่ต้องให้กูเกิลเก็บ
+Disallow: /go.html
+Disallow: /confirm/
+
+Sitemap: https://ducksave.com/sitemap.xml

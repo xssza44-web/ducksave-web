@@ -1,81 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DuckSave · Personal finance, made friendly</title>
-<meta name="description" content="DuckSave is a money tracker for people who already keep track of their spending — and want an app that does it better.">
+<title>DuckSave — แอปบันทึกรายรับรายจ่าย ใช้ฟรี ไม่ต้องสมัคร ใช้ออฟไลน์ได้</title>
+<meta name="description" content="DuckSave แอปบันทึกรายรับรายจ่ายและเป้าออมเงิน บันทึกได้ในไม่กี่วินาที ดูเงินทุกบัญชีในที่เดียว ใช้ออฟไลน์ได้ ฟรี ไม่ต้องสมัครก็ใช้ได้ พร้อมคู่มือตารางออมเงินโหลดฟรี">
+<link rel="canonical" href="https://ducksave.com/">
+<link rel="alternate" hreflang="th" href="https://ducksave.com/">
+<link rel="alternate" hreflang="en" href="https://ducksave.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://ducksave.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  :root {
-    --duck-yellow: #F7C948;
-    --duck-deep: #1C2B3A;
-    --duck-teal: #1D9E75;
-    --duck-cream: #FBF7EE;
-    --duck-pond: #E8F1F0;
-    --text-soft: #5B6B7A;
-    --border: #E2DACB;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Noto Sans Thai", sans-serif;
-    background: var(--duck-cream);
-    color: var(--duck-deep);
-    line-height: 1.6;
-  }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 64px 24px; }
-  .hero { text-align: center; margin-bottom: 56px; }
-  .duck { font-size: 72px; line-height: 1; margin-bottom: 16px; display: inline-block; }
-  h1 { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
-  .tagline { font-size: 18px; color: var(--text-soft); max-width: 480px; margin: 0 auto; }
-  .pond {
-    background: var(--duck-pond);
-    border-radius: 24px;
-    padding: 32px;
-    margin-bottom: 24px;
-  }
-  .pond h2 { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
-  .feat { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
-  .feat:last-child { margin-bottom: 0; }
-  .feat .dot { color: var(--duck-teal); font-weight: 700; flex-shrink: 0; }
-  .feat span { color: var(--text-soft); font-size: 15px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
-  .links a {
-    color: var(--duck-deep); text-decoration: none; font-size: 14px;
-    padding: 10px 18px; border: 1px solid var(--border); border-radius: 12px;
-    background: #fff; transition: border-color 0.15s;
-  }
-  .links a:hover { border-color: var(--duck-teal); }
-  .footer { text-align: center; margin-top: 48px; font-size: 13px; color: #B0A999; }
-  /* 🇹🇭 กันคำทับศัพท์ไม่ให้ถูกตัดกลางคำ — ภาษาไทยไม่มีช่องว่างระหว่างคำ
-     เบราว์เซอร์จึงเดาจุดตัดเอง และตัด "คลาวด์" ออกจากคำหน้ามันได้ */
-  .nb { white-space: nowrap; }
+.hero{padding-top:30px}
+.hero h1{font-size:52px}
+.heroin{display:grid;grid-template-columns:1fr 250px;gap:44px;align-items:center}
+.heroin > img{width:100%;border-radius:22px;border:7px solid #fff;
+              box-shadow:0 18px 44px rgba(28,43,58,.15)}
+.feats{margin-top:46px;background:var(--pond);border-radius:22px;padding:30px 34px}
+.feats h2{font-size:21px;font-weight:700;margin-bottom:17px}
+.feats div{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px;font-size:16.5px;color:#41525F}
+.feats div:last-child{margin-bottom:0}
+.feats .dot{color:var(--teal);font-weight:700;flex:none}
+.gsec{margin-top:58px}
+.gsec .lbl{font-size:13px;letter-spacing:.14em;color:var(--purple);font-weight:600}
+.gsec h2{margin-top:11px;font-size:30px;font-weight:700;letter-spacing:-.6px;line-height:1.32}
+.gsec > p{margin-top:12px;font-size:17.5px;line-height:1.74;color:var(--muted);max-width:38em}
+.g4{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g4 a{display:flex;flex-direction:column;text-decoration:none;background:#fff;
+      border:1px solid var(--line);border-radius:18px;padding:23px 25px;
+      transition:box-shadow .15s,transform .15s}
+.g4 a:hover{box-shadow:0 14px 32px rgba(28,43,58,.11);transform:translateY(-2px)}
+.g4 .n{align-self:flex-start;display:inline-grid;place-items:center;width:26px;height:26px;
+       border-radius:9px;background:#F1ECFB;color:var(--purple);font-weight:700;font-size:14px}
+.g4 h3{margin-top:13px;font-size:21px;font-weight:700;letter-spacing:-.2px;line-height:1.34}
+.g4 .sum{margin-top:7px;font-size:16px;color:var(--muted);line-height:1.6}
+.g4 .go{margin-top:auto;padding-top:15px;font-size:15.5px;font-weight:600;color:var(--purple)}
+@media (max-width:860px){
+  .hero h1{font-size:32px}
+  .heroin{grid-template-columns:1fr;gap:26px}
+  .heroin > img{max-width:220px;margin:0 auto;display:block;order:-1}
+  .g4{grid-template-columns:1fr}
+  .gsec h2{font-size:24px}
+}
 </style>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-  <link rel="apple-touch-icon" href="assets/icon-192.png">
 </head>
 <body>
-  <div class="wrap">
-    <div class="hero">
-      <img class="duck" src="assets/logo-256.png" alt="DuckSave logo" width="96" height="96" style="display:inline-block;">
-      <h1>DuckSave</h1>
-      <p class="tagline">Personal finance, made friendly. Every account in one place, quick to log, private, and it works offline.</p>
+<div class="wrap">
+
+  <header class="top">
+    <a class="home" href="/"><img src="/assets/logo-256.png" alt=""><span class="nm">DuckSave</span></a>
+    <nav>
+      <details class="dd">
+        <summary>คู่มือการเงิน</summary>
+        <div class="panel">
+          <div class="hd">วิธีออมใน DUCKSAVE</div>
+          <a href="/guides/fixed/"><span class="t">เท่ากันทุกครั้ง</span></a>
+          <a href="/guides/reverse/"><span class="t">ลดลงทีละนิด</span></a>
+          <a href="/guides/percent/"><span class="t">ส่วนแบ่งจากเงินที่เข้ามา</span></a>
+          <a href="/guides/free/"><span class="t">ออมอิสระ</span></a>
+        </div>
+      </details>
+      <a class="lang" href="/en/">EN</a>
+    </nav>
+  </header>
+
+  <div class="col hero">
+    <div class="heroin">
+      <div>
+        <h1>ดูว่า<em>เงินไปไหนหมด</em></h1>
+        <p class="lede">บันทึกรายรับรายจ่ายได้ในไม่กี่วินาที ดูเงินทุกบัญชีในที่เดียว ใช้ออฟไลน์ได้
+          <b>ฟรี — ไม่ต้องสมัครก็ใช้ได้</b></p>
+        <div class="cta">
+          <a class="btn p" href="/download/">โหลดแอป</a>
+          <a class="btn s" href="/guides/">ดูคู่มือการเงิน</a>
+          <span class="note">มีบน Google Play แล้ว · iOS เร็ว ๆ นี้</span>
+        </div>
+      </div>
+      <img src="/assets/logo-512.png" alt="DuckSave">
     </div>
 
-    <div class="pond">
-      <h2>Built for people who already track their money</h2>
-      <div class="feat"><span class="dot">✓</span><span>Log income and expenses in seconds — offline and private</span></div>
-      <div class="feat"><span class="dot">✓</span><span>Simple budgets that fit how you actually spend</span></div>
-      <div class="feat"><span class="dot">✓</span><span>Savings goals, net worth, and clear insights</span></div>
-      <div class="feat"><span class="dot">✓</span><span>Available on Android</span></div>
+    <div class="feats">
+      <h2>เรื่องเงิน ที่เป็นมิตร</h2>
+      <div><span class="dot">✓</span><span>บันทึกรายรับรายจ่ายได้ในไม่กี่วินาที</span></div>
+      <div><span class="dot">✓</span><span>ดูเงินทุกบัญชีในที่เดียว</span></div>
+      <div><span class="dot">✓</span><span>ตั้งงบที่ใช้ได้จริงกับวิธีใช้เงินของคุณ</span></div>
+      <div><span class="dot">✓</span><span>ตั้งเป้าออมเงินแล้วให้แอปนับให้</span></div>
+      <div><span class="dot">✓</span><span>ใช้ออฟไลน์ได้ ข้อมูลอยู่ในเครื่องคุณ</span></div>
     </div>
 
-    <div class="links">
-      <a href="privacy/">Privacy Policy</a>
-      <a href="delete/">Delete Account</a>
-    </div>
-
-    <p class="footer">© 2026 DuckSave · A friendly place to save</p>
+    <section class="gsec">
+      <div class="lbl">คู่มือการเงิน</div>
+      <h2>4 วิธีออมเงิน<br>เลือกแบบที่เข้ากับจังหวะเงินของคุณ</h2>
+      <p>ทุกคู่มือมีตารางครบ คิดเลขให้แล้ว บอกข้อดีข้อเสียตรง ๆ และมีไฟล์พิมพ์ได้แจกฟรี
+        ไม่ต้องสมัคร ไม่ต้องกรอกอีเมล</p>
+      <div class="g4">
+        <a href="/guides/fixed/"><h3>เท่ากันทุกครั้ง</h3>
+          <div class="sum">ยอดเดิมทุกงวด รู้ล่วงหน้าเสมอว่าต้องเตรียมเท่าไร</div>
+          <div class="go">อ่านคู่มือ →</div></a>
+        <a href="/guides/reverse/"><h3>ลดลงทีละนิด</h3>
+          <div class="sum">ตาราง 52 สัปดาห์แบบไล่ย้อน หนักตอนต้น เบาตอนปลายปี</div>
+          <div class="go">อ่านคู่มือ →</div></a>
+        <a href="/guides/percent/"><h3>ส่วนแบ่งจากเงินที่เข้ามา</h3>
+          <div class="sum">แบ่งเปอร์เซ็นต์ทุกครั้งที่เงินเข้า รายได้ไม่แน่นอนก็ทำได้</div>
+          <div class="go">อ่านคู่มือ →</div></a>
+        <a href="/guides/free/"><h3>ออมอิสระ</h3>
+          <div class="sum">ไม่มีตาราง ไม่มีช่องให้พลาด หยอดเท่าไรเมื่อไรก็ได้</div>
+          <div class="go">อ่านคู่มือ →</div></a>
+      </div>
+    </section>
   </div>
+
+  <footer>
+    <img src="/assets/logo-256.png" alt="">
+    <a href="/privacy/">นโยบายความเป็นส่วนตัว</a>
+    <a href="/terms/">ข้อกำหนดการใช้งาน</a>
+    <a href="/delete/">ลบบัญชี</a>
+    <a href="/download/">โหลดแอป</a>
+    <span class="right">© 2026 DuckSave</span>
+  </footer>
+
+</div>
 </body>
 </html>
