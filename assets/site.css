@@ -39,7 +39,11 @@ img{max-width:100%}
 /* ───── แถบบน + ลิ้นชัก — อยู่บนโต๊ะ ไม่ใช่บนกระดาษ ───── */
 .top{position:relative;display:flex;align-items:center;gap:13px;padding:22px 0 20px}
 .top>a.home{display:flex;align-items:center;gap:11px;text-decoration:none}
-.top img{width:34px;height:34px}
+/* ไฟล์โลโก้เป็นสี่เหลี่ยมทึบ มุมมนทำด้วย CSS ไม่ใช่ความโปร่งใสในไฟล์
+   เหตุผล: ย่อรูปโปร่งใสแรง ๆ (34px จากต้นฉบับ 256px = 7.5 เท่า) ทำให้บางเครื่อง
+   ดึงสีม่วงจากขอบเข้ามาเติมมุมที่ควรใส กลายเป็นสี่เหลี่ยมจาง ๆ รอบไอคอน
+   รูปทึบไม่มีมุมใสให้เติม จึงไม่มีทางเกิดอาการนี้ ไม่ว่าย่อแรงแค่ไหน */
+.top img{width:34px;height:34px;border-radius:26%}
 .top .nm{font-weight:700;font-size:19px}
 .top nav{margin-left:auto;display:flex;align-items:center;gap:22px;font-size:16px;color:var(--muted)}
 .top nav a{text-decoration:none}
@@ -97,9 +101,13 @@ h1 em::before{content:"";position:absolute;left:-6px;right:-10px;top:12%;bottom:
    ความมนนี้ยังกินคราบมืดที่ติดมากับมุมบนของรูปหน้าจอออกไปด้วย (คราบกว้างข้างละ 31px ที่ขนาดต้นฉบับ) */
 .taped img{display:block;width:100%;border:1px solid var(--line);
   border-radius:26px;box-shadow:0 10px 22px rgba(74,62,36,.26)}
-.taped::before,.taped::after{content:"";position:absolute;width:86px;height:26px;
+/* เทปใสทับบนหัวรูปซึ่งเป็นพื้นครีม จะจมหายไปถ้าไม่มีเงากับขอบของตัวเอง
+   (พิสูจน์แล้วว่าเทปอยู่บนรูปจริง ไม่ใช่ปัญหาลำดับชั้น) */
+.taped::before,.taped::after{content:"";position:absolute;z-index:2;width:86px;height:26px;
   background:rgba(247,201,72,.44);border-left:1px dashed rgba(180,145,40,.5);
-  border-right:1px dashed rgba(180,145,40,.5)}
+  border-right:1px dashed rgba(180,145,40,.5);
+  border-top:1px solid rgba(150,115,25,.35);border-bottom:1px solid rgba(150,115,25,.35);
+  box-shadow:0 2px 5px rgba(74,62,36,.3)}
 .taped::before{top:-12px;left:-24px;transform:rotate(-26deg)}
 .taped::after{bottom:-12px;right:-24px;transform:rotate(-26deg)}
 
@@ -231,7 +239,7 @@ td.c{color:var(--teal);font-weight:600}
 .dis{margin-top:22px;font-size:15px;color:var(--muted);line-height:1.72}
 footer{margin-top:40px;padding:26px 0 56px;display:flex;align-items:center;gap:22px;
        font-size:15px;color:#6B6453;flex-wrap:wrap;border-top:1px solid rgba(100,88,62,.22)}
-footer img{width:40px;height:40px;opacity:.85}
+footer img{width:40px;height:40px;opacity:.85;border-radius:26%}
 footer a{text-decoration:none}
 footer .right{margin-left:auto}
 
@@ -314,7 +322,9 @@ footer .right{margin-left:auto}
   .by .ph{border-color:#4A5852;color:#7C857B}
   .taped img{border-color:var(--line);box-shadow:0 10px 24px rgba(0,0,0,.52);filter:brightness(.9)}
   .taped::before,.taped::after{background:rgba(233,199,92,.3);
-    border-left-color:rgba(233,199,92,.4);border-right-color:rgba(233,199,92,.4)}
+    border-left-color:rgba(233,199,92,.4);border-right-color:rgba(233,199,92,.4);
+    border-top-color:rgba(233,199,92,.45);border-bottom-color:rgba(233,199,92,.45);
+    box-shadow:0 2px 6px rgba(0,0,0,.5)}
   .give img,.appbox img{border-color:var(--line);box-shadow:0 8px 20px rgba(0,0,0,.46);
     filter:brightness(.9)}
 
