@@ -90,8 +90,10 @@ h1 em::before{content:"";position:absolute;left:-6px;right:-10px;top:12%;bottom:
 
 /* ───── รูปติดเทป ───── */
 .taped{position:relative}
+/* มุมมน — เจ้าของเลือก "มนกลาง" 20 พ.ย.
+   ความมนนี้ยังกินคราบมืดที่ติดมากับมุมบนของรูปหน้าจอออกไปด้วย (คราบกว้างข้างละ 31px ที่ขนาดต้นฉบับ) */
 .taped img{display:block;width:100%;border:1px solid var(--line);
-  box-shadow:0 10px 22px rgba(74,62,36,.26)}
+  border-radius:26px;box-shadow:0 10px 22px rgba(74,62,36,.26)}
 .taped::before,.taped::after{content:"";position:absolute;width:86px;height:26px;
   background:rgba(247,201,72,.44);border-left:1px dashed rgba(180,145,40,.5);
   border-right:1px dashed rgba(180,145,40,.5)}
