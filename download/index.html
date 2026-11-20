@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{ /* เว็บนี้มีธีมเดียวคือสว่าง · กันเบราว์เซอร์แปลงสีเองในโหมดมืด */
-       color-scheme:light;
+       color-scheme:light dark;
        --desk:#DCD4C1; --paper:#FFFDF6; --paper2:#FAF5E8; --ink:#1F2A33;
        --yellow:#F7C948; --teal:#1D9E75; --muted:#4C5862; --soft:#6E7B88;
        --line:#D9CFB8; --hair:#EFE8D9; }
@@ -74,6 +74,28 @@ h1{font-size:32px;font-weight:700;letter-spacing:-.5px;line-height:1.34}
 .back{margin-top:22px;font-size:14.5px}
 .back a{color:var(--muted)}
 @media (max-width:560px){ .card{padding:28px 22px 26px} }
+
+@media (prefers-color-scheme: dark){
+  :root{ --desk:#13181A; --paper:#263330; --paper2:#212C29; --ink:#ECE7D8;
+         --muted:#AAB3A8; --soft:#8C958B; --line:#3D4B45; --hair:#32403A;
+         --yellow:#E9C75C; --teal:#5FC79B; }
+  body::before{background-image:radial-gradient(rgba(226,236,226,.05) .9px,transparent .9px)}
+  .card{box-shadow:0 -1px 0 rgba(236,231,216,.07) inset,0 18px 34px rgba(0,0,0,.52)}
+  .card::before{background:var(--paper2);box-shadow:0 10px 18px rgba(0,0,0,.42)}
+  .card::after{background:#1C2522;box-shadow:0 8px 14px rgba(0,0,0,.34)}
+  .opt{box-shadow:0 -1px 0 rgba(236,231,216,.07) inset,0 8px 18px rgba(0,0,0,.44)}
+  .opt.go{border-color:var(--ink);box-shadow:5px 5px 0 var(--yellow)}
+  .opt.go:hover{box-shadow:3px 3px 0 var(--yellow)}
+  .opt.wait{background:#202925;border-color:#4A5852;color:#7C857B}
+  .opt.wait .pf,.opt.wait span{color:#7C857B}
+  .opt.wait .soon{background:#3B4842;color:#CBD2C7}
+  .feat{border-top-color:var(--ink)}
+  .feat::before{background:repeating-linear-gradient(180deg,transparent 0 31px,
+                rgba(226,236,226,.1) 31px 32px)}
+  .feat div{color:#D6D2C4}
+  .en{border-top-color:var(--hair);color:#8C958B}
+  .en b{color:var(--muted)}
+}
 </style>
 <script type="application/ld+json">
 {

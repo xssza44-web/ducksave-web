@@ -1,7 +1,7 @@
 /* DuckSave — ชุดหน้าตาที่ทุกหน้าใช้ร่วมกัน · กระดาษวางบนโต๊ะ */
 :root{ /* เว็บนี้มีธีมเดียวคือสว่าง · บอกเบราว์เซอร์ไว้ ไม่งั้นมือถือบางเครื่องจะแปลงสีให้เอง
           ในโหมดมืด แล้วแปลงพลาดตรงรูปโปร่งใส จนเกิดเงาสี่เหลี่ยมรอบไอคอน */
-       color-scheme:light;
+       color-scheme:light dark;
        --desk:#DCD4C1; --paper:#FFFDF6; --paper2:#FAF5E8;
        --ink:#1F2A33; --muted:#4C5862; --soft:#6E7B88;
        --yellow:#F7C948; --teal:#1D9E75; --purple:#7657CB; --red:#BF4F30;
@@ -264,4 +264,109 @@ footer .right{margin-left:auto}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .btn,.cards a{transition:none}
+}
+
+/* ══════════════════════════════════════════════════════════════
+   กลางคืน — กระดานดำกับชอล์ก
+   กลางวันคือกระดาษบนโต๊ะ กลางคืนคือกระดานดำ เนื้อหาเดียวกันทุกตัวอักษร
+   ก้อนนี้ทำงานเฉพาะตอนเครื่องตั้งเป็นโหมดมืด ไม่แตะโหมดสว่างเลย
+   ══════════════════════════════════════════════════════════════ */
+@media (prefers-color-scheme: dark){
+  :root{
+    --desk:#13181A;      /* ห้องมืดรอบกระดาน */
+    --paper:#263330;     /* หน้ากระดาน — เขียวอมเทาแบบกระดานจริง ไม่ใช่ดำสนิท */
+    --paper2:#212C29;
+    --ink:#ECE7D8;       /* ชอล์ก — ขาวอมครีม ไม่ใช่ขาวจัด */
+    --muted:#AAB3A8;
+    --soft:#8C958B;
+    --yellow:#E9C75C;    /* ชอล์กเหลือง */
+    --teal:#5FC79B;
+    --purple:#AB95E6;
+    --red:#E0836A;
+    --line:#3D4B45;      /* ขอบกระดาน */
+    --hair:#32403A;
+    --pond:#2B3934;
+  }
+  /* ฝุ่นชอล์กแทนเนื้อกระดาษ */
+  body::before{background-image:radial-gradient(rgba(226,236,226,.05) .9px,transparent .9px)}
+
+  /* กระดานมีขอบสว่างด้านบนแทนเงาเข้ม เพราะเงาเข้มไม่ขึ้นบนพื้นมืด */
+  .sheet{box-shadow:0 -1px 0 rgba(236,231,216,.07) inset, 0 16px 30px rgba(0,0,0,.5)}
+  .sheet.stack::before{background:var(--paper2);box-shadow:0 10px 18px rgba(0,0,0,.42)}
+  .sheet.stack::after{background:#1C2522;box-shadow:0 8px 14px rgba(0,0,0,.34)}
+  .ruled::before{background:repeating-linear-gradient(180deg,transparent 0 33px,
+                 rgba(226,236,226,.1) 33px 34px)}
+
+  .panel{box-shadow:0 -1px 0 rgba(236,231,216,.08) inset,0 18px 34px rgba(0,0,0,.55)}
+  .panel a.on{background:#2F3E38}
+
+  /* ปุ่ม — ชอล์กทึบบนกระดาน เงายังเป็นชอล์กเหลือง */
+  .btn.p{background:var(--ink);color:#1A2320;box-shadow:5px 5px 0 var(--yellow)}
+  .btn.p:hover{box-shadow:3px 3px 0 var(--yellow)}
+  .btn.s{background:transparent;color:var(--ink);border-color:var(--ink);
+         box-shadow:5px 5px 0 rgba(236,231,216,.2)}
+  .btn.s:hover{box-shadow:3px 3px 0 rgba(236,231,216,.2)}
+
+  /* ไฮไลต์ยังคลุมเต็มบรรทัดเหมือนเดิม แต่เป็นชอล์กเหลือง ตัวหนังสือกลับเป็นสีกระดาน */
+  h1 em{color:#1A2320}
+  h1 em::before{opacity:.92}
+
+  .by .ph{border-color:#4A5852;color:#7C857B}
+  .taped img{border-color:var(--line);box-shadow:0 10px 24px rgba(0,0,0,.52);filter:brightness(.9)}
+  .taped::before,.taped::after{background:rgba(233,199,92,.3);
+    border-left-color:rgba(233,199,92,.4);border-right-color:rgba(233,199,92,.4)}
+  .give img,.appbox img{border-color:var(--line);box-shadow:0 8px 20px rgba(0,0,0,.46);
+    filter:brightness(.9)}
+
+  .toc a::before{border-color:#5B6A63}
+  section p{color:#D6D2C4}
+  .pull{border-left-color:var(--yellow)}
+
+  th{background:#2F3E38;border-bottom-color:var(--line)}
+  td{border-bottom-color:var(--hair)}
+  td.dim{color:#7C857B}
+  tr:nth-child(5n) td{border-bottom-color:var(--line)}
+  .t52 th:nth-child(4),.t52 td:nth-child(4){border-left-color:var(--line)}
+  .tscroll{background:
+    linear-gradient(to right,var(--paper),rgba(38,51,48,0)) left center,
+    linear-gradient(to left,var(--paper),rgba(38,51,48,0)) right center,
+    radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.5),rgba(0,0,0,0)) left center,
+    radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.5),rgba(0,0,0,0)) right center;
+    background-repeat:no-repeat;
+    background-size:40px 100%,40px 100%,15px 100%,15px 100%;
+    background-attachment:local,local,scroll,scroll}
+
+  .bars{background:#2F3E38;border-color:var(--line)}
+  .bars i{background:linear-gradient(180deg,#E9C75C,#B7922C)}
+
+  .cite{background:#2F3E38;border-left-color:var(--ink);box-shadow:0 6px 14px rgba(0,0,0,.4)}
+  .cite .who{color:var(--ink)}
+
+  .big > div{background:#2F3E38;border-color:var(--line)}
+  .big .l{color:#D6D2C4}
+
+  /* ชอล์กสี่สีบนกระดาน */
+  /* ต้องเขียน .fit > .pro ไม่ใช่ .pro เฉย ๆ เพราะกฎ .fit > div ตั้ง border ไว้แบบ
+     ใช้สีตัวหนังสือ และมีน้ำหนักมากกว่า ถ้าเขียนสั้นกว่านี้ขอบจะเป็นชอล์กขาวจ้า */
+  .fit > .pro{background:#24352D;border-color:#3E5A49}
+  .pro .lbl{color:#6FD0A5} .pro li{color:#BBD6C7} .pro li::before{color:#5FC79B}
+  .fit > .con{background:#352A26;border-color:#5C4138}
+  .con .lbl{color:var(--red)} .con li{color:#D9BCB1} .con li::before{color:#A8705C}
+  .fit > .yes{background:#2B2740;border-color:#463C66}
+  .yes .lbl{color:var(--purple)} .yes li{color:#C7BDE4} .yes li::before{border-color:#AB95E6}
+  .fit > .nofit{background:#2B2E29;border-color:#474B43}
+  .nofit .lbl{color:#9AA296} .nofit li{color:#B6BAB0} .nofit li::before{color:#7C857B}
+
+  .rows{border-top-color:var(--ink)}
+  .rows > div{border-bottom-color:var(--hair)}
+
+  .limits{background:#352A26;border-color:#5C4138}
+  .limits li{color:#D9BCB1}
+  .limits li::before{color:#A8705C}
+
+  .cards a{box-shadow:0 -1px 0 rgba(236,231,216,.07) inset,0 10px 22px rgba(0,0,0,.46)}
+  .cards a:hover{box-shadow:0 -1px 0 rgba(236,231,216,.1) inset,0 18px 32px rgba(0,0,0,.56)}
+
+  .refs li{color:var(--muted)}
+  footer{border-top-color:rgba(236,231,216,.16);color:#8C958B}
 }

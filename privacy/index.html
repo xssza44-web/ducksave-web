@@ -8,8 +8,7 @@
 <meta name="description" content="DuckSave privacy policy — your financial data stays on your device first, backed up only when you choose.">
 <style>
   :root {
-    /* เว็บนี้มีธีมเดียวคือสว่าง · กันเบราว์เซอร์แปลงสีเองในโหมดมืด */
-    color-scheme:light;
+    color-scheme:light dark;
     --duck-yellow:#F7C948; --duck-deep:#1F2A33; --duck-teal:#1D9E75;
     --duck-cream:#FFFDF6; --duck-pond:#F7F2E4; --text-soft:#4C5862;
     --border:#D9CFB8; --hair:#EFE8D9; --desk:#DCD4C1; --paper2:#FAF5E8;
@@ -102,6 +101,36 @@
     .wrap { padding:28px 22px 26px; }
     h1 { font-size:25px; }
     .step:nth-of-type(odd), .step:nth-of-type(even) { transform:none; }
+  }
+
+  /* ───── กลางคืน — กระดานดำกับชอล์ก ───── */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --duck-yellow:#E9C75C; --duck-deep:#ECE7D8; --duck-teal:#5FC79B;
+      --duck-cream:#263330; --duck-pond:#2F3E38; --text-soft:#AAB3A8;
+      --border:#3D4B45; --hair:#32403A; --desk:#13181A; --paper2:#212C29;
+      --danger:#E0836A;
+    }
+    body::before { background-image:radial-gradient(rgba(226,236,226,.05) .9px,transparent .9px); }
+    .wrap { box-shadow:0 -1px 0 rgba(236,231,216,.07) inset, 0 20px 36px rgba(0,0,0,.52); }
+    .wrap::before { background:var(--paper2); box-shadow:0 10px 18px rgba(0,0,0,.42); }
+    .wrap::after { background:#1C2522; box-shadow:0 8px 14px rgba(0,0,0,.34); }
+    .meta { color:#8C958B; }
+    .langbar button { box-shadow:4px 4px 0 rgba(236,231,216,.2); }
+    .langbar button:hover { box-shadow:2px 2px 0 rgba(236,231,216,.2); }
+    .langbar button.active { background:var(--duck-deep); color:#1A2320;
+      box-shadow:4px 4px 0 var(--duck-yellow); }
+    .langbar button.active:hover { box-shadow:2px 2px 0 var(--duck-yellow); }
+    .summary { box-shadow:0 6px 14px rgba(0,0,0,.4); }
+    p, ul, ol, li, ul li, ol li { color:#D6D2C4; }
+    a:hover { background:rgba(233,199,92,.2); }
+    .step { box-shadow:0 -1px 0 rgba(236,231,216,.07) inset, 0 10px 22px rgba(0,0,0,.44); }
+    .step-num { color:#1A2320; }
+    .hint { color:#8C958B; }
+    .danger-box { background:#352A26; border-color:#5C4138; }
+    .btn-mail { color:#1A2320; box-shadow:5px 5px 0 var(--duck-yellow); }
+    .btn-mail:hover { box-shadow:3px 3px 0 var(--duck-yellow); }
+    .footer { color:#8C958B; }
   }
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
