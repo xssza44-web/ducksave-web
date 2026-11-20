@@ -195,7 +195,7 @@ td.c{color:var(--teal);font-weight:600}
 .give h3{font-size:25px;font-weight:700;letter-spacing:-.4px;line-height:1.4}
 .give p{margin-top:12px;font-size:17px;line-height:1.76;color:var(--muted)}
 .give .row{margin-top:21px;display:flex;gap:16px;flex-wrap:wrap}
-.give img,.appbox img{width:100%;border:1px solid var(--line);
+.give img,.appbox img{width:100%;border:1px solid var(--line);border-radius:26px;
   box-shadow:0 8px 18px rgba(74,62,36,.22)}
 .appbox{margin-top:34px;padding-top:32px;border-top:1.5px solid var(--line);
   display:grid;grid-template-columns:1fr 200px;gap:34px;align-items:center}
